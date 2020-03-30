@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Effectif Victorious Secrets</title>
+        <link rel="stylesheet" href="/public/effectif.css" />
+    </head>
+    <%- include('header.ejs') %>
+    <body>
+            
+        <h2>Coachs</h2>
+
+        <ul>
+        <% listecoachs.forEach(function(coach) { %>
+            <li><a href="/effectif/supprimer/<%= coach.id%>">[✘]</a> <a href='/effectif/update/<%= coach.id%>'> [Modifier] </a>
+                <%= coach.id %> : <%= coach.firstname %> <%= coach.lastname %></li>
+        <% }); %>
+        </ul>
+
+        <form action="/effectif/ajouter/" method="post">
+            <p>
+                <label for="coach">Ajouter un Coach : </label> </br>
+             Prénom:<input type="text" name="firstname" id="coachfn" autofocus /> </br>
+             Nom:<input type="text" name="lastname" id="coachln" autofocus /> </br>
+                <input type="submit" value="Ajouter Coach" />
+            </p>
+        </form>
+
+        <h2>Joueuses</h2>
+
+        <ul>
+        <% listejoueuses.forEach(function(joueuse) { %>
+            <li><a href="/effectifj/supprimer/<%= joueuse.id %>">[✘]</a> <a href='/effectifj/update/<%= joueuse.id%>'> [Modifier] </a>
+                <%= joueuse.id %> : <%= joueuse.firstname %> <%= joueuse.lastname %></li>
+        <% }); %>
+        </ul>
+
+        <form action="/effectifj/ajouter/" method="post">
+            <p>
+                <label for="joueuse">Ajouter une Joueuse : </label> </br>
+            Prénom:<input type="text" name="firstname" id="joueusefn" autofocus /> </br>
+            Nom:   <input type="text" name="lastname" id="joueuseln" autofocus /> </br>
+                <input type="submit" value="Ajouter Joueuse" />
+            </p>
+        </form>
+        
+    </body>
+    <%- include('footer.ejs') %>
+</html>

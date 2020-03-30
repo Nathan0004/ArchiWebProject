@@ -1,0 +1,12 @@
+footer {
+    background-color: #a8c6fa;
+    display: flex;
+    align-items: center;
+justify-content: center;
+}
+
+.logonetwork {
+    height : 50px;
+    width : 50px;
+    }
+  

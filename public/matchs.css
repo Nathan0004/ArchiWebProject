@@ -1,0 +1,58 @@
+a {text-decoration: none; color: black;}
+
+h2 {
+    margin-left : 20px;
+}
+
+select {
+    width : 90px;
+}
+
+.elementmatch {
+    background-color : #c5d7f5;
+    border-radius : 3px;
+    margin : 20px;
+    margin-left : -20px;
+    list-style : none;
+    display:flex;
+    justify-content: space-between;
+    height : 250px;
+    }
+.infosmatch {
+    display:flex;
+    flex-direction: column;
+}
+
+.composition {
+    background-color: #13cc66;
+    width : 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.gardien {
+    text-align: center;
+    margin-top:30px;
+}
+
+.defense {
+    display:flex;
+    justify-content: space-around;
+    margin-top:30px;
+}
+.milieu {
+    display:flex;
+    justify-content: space-around;
+    margin-top:30px;
+}
+
+.attaque {
+    display:flex;
+    justify-content: space-around;
+    margin-top:30px;
+}
+
+.ajoutmatch {
+    margin-left : 20px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Update Match </title>
+</head>
+<%- include('header.ejs') %>
+<body>
+    <h1>Match Update :  <%= id %></h1>
+    <form action="/matchs/update" method="POST">
+        <input type="hidden" value="<%= id %>" name="id">
+        <label for="mtitre">Titre :</label>
+        <input id="mtitre" type="text" name="titre" value ="<%= titre %>"><br>
+        <label for="mdate">Date :</label>
+        <input id="mdate" type="date" name="date" value ="<%= date %>"><br>
+        <label for="mdate">Adresse :</label>
+        <input id="mdate" type="adresse" name="adresse" value ="<%= adresse %>"><br>
+        <input type="submit" name="save" value="Sauver">
+        <a href="/matchs"> <input type="button" value="Retour"> </a>
+    </form>
+
+</body>
+<%- include('footer.ejs') %>
+</html>
