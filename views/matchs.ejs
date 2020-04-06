@@ -20,6 +20,7 @@
                 <a href="/matchs/supprimer/<%= match.id %>">[✘]</a> </div>
                <h3> <%= match.id %> : <%= match.titre %> </h3>  
                <p><em>Date:</em> <%= match.date %> </p> 
+               <p><em>Heure:</em> <%= match.heure %> </p> 
                <p><em>Adresse:</em> : <%= match.adresse %> </p>
                <p><em>Coach du jour:</em><SELECT name='Coach' size="1">
                 <OPTION>Coach</OPTION>
@@ -48,7 +49,6 @@
                         <% listejoueuses.forEach(function(joueuse) { %>
             
                             <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
-                         
                          <% }); %> 
                     </SELECT>
 
@@ -151,6 +151,7 @@
                 <label for="match">Ajouter un Match : </label> </br>
             Titre:<input type="text" name="titre" id="matchti" autofocus /></br>
             Date:   <input type="date" name="date" id="matchda" autofocus /></br>
+            Heure:   <input type="text" name="heure" id="timeda" autofocus /></br>
             Adresse:   <input type="text" name="adresse" id="matchad" autofocus /></br>
                 <input type="submit" />
             </p>

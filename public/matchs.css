@@ -16,7 +16,7 @@ select {
     list-style : none;
     display:flex;
     justify-content: space-between;
-    height : 250px;
+    height : 270px;
     }
 .infosmatch {
     display:flex;

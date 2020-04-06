@@ -31,7 +31,7 @@ exports.matchs = function (req, res) {
 
 /* On ajoute un élément à la liste des matchs */
 exports.addmatch = function (req, res) {
-    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.adresse);
+    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse);
     console.log(match);
     connection.query("INSERT INTO Matchs set ?", match, function (error, resultSQL) {
         if (error) {
@@ -69,14 +69,14 @@ exports.updatematchpage = function (req, res) {
             console.log(resultSQL);
             matchs = resultSQL;
             res.render('updatematch.ejs',
-                { id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, adresse: matchs[0].adresse });
+                { id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse });
         }
     });
 }
 
 
 exports.updatematch = function (req, res) {
-    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.adresse); console.log(match);
+    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse); console.log(match);
     connection.query("UPDATE Matchs SET ? WHERE id = ?",
         [match, req.body.id], function (error, resultSQL) {
             if (error) {
