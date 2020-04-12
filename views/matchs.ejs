@@ -10,6 +10,8 @@
     <body>
         <h2>Matchs</h2>
 
+     <p class='lignedeco'  > ________________________________________________________________________________________________________________________</p>
+
         <ul>
                 
             <% listematchs.forEach(function(match) { %>
@@ -35,10 +37,10 @@
                         <strong><%= match.MD %> </strong>
                     </div>
                     <div class='defense'>
-                        <strong><%= match.DCG %> </strong>
                         <strong><%= match.DG %> </strong>
-                        <strong><%= match.DD %> </strong>
+                        <strong><%= match.DCG %> </strong>
                         <strong><%= match.DCD %> </strong>
+                        <strong><%= match.DD %> </strong>
                         
                     </div>
                     <div class="gardien">
@@ -51,16 +53,19 @@
             
             <% }); %> 
           
-        
+            <p class='lignedeco'  > ________________________________________________________________________________________________________________________</p>
 
-        <form class="ajoutmatch" action="/matchs/ajouter/" method="post">
+        <form action="/matchs/ajouter/" method="post">
             <p>
-                <label for="match">Ajouter un Match : </label> </br>
+                <fieldset>
+                    
+                <legend><strong>Ajouter un Match :</strong> </legend>
+                <div class="infosform">
             Titre:<input type="text" name="titre" id="matchti" autofocus /></br>
             Date:   <input type="date" name="date" id="matchda" autofocus /></br>
             Heure:   <input type="time" value="00:00" name="heure" id="timeda" autofocus /></br>
             Adresse:   <input type="text" name="adresse" id="matchad" autofocus /></br>
-            Coach du jour:</br>
+            Coach du jour:
             <SELECT name="matchcoach" size="1">
                 <OPTION>Coach</OPTION>
                 <% listecoachs.forEach(function(coach) { %>
@@ -68,8 +73,10 @@
                     <OPTION> <%= coach.lastname %> <%= coach.firstname[0] %> </OPTION>
                  
                  <% }); %> 
-            </SELECT> </br>
-            Attaque: </br>
+            </SELECT> 
+        </div>
+        <div class="compoform">
+        <div class='attaque'>
         <SELECT name="AG" size="1">
                     <OPTION>AG</OPTION>
                     <% listejoueuses.forEach(function(joueuse) { %>
@@ -94,9 +101,10 @@
                     <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
                  
                  <% }); %> 
-        </SELECT></br>
+        </SELECT> 
+    </div>
       
-     Milieu: </br>
+     <div class="milieu">
         <SELECT name='MG' size="1">
                 <OPTION>MG</OPTION>
                 <% listejoueuses.forEach(function(joueuse) { %>
@@ -122,8 +130,9 @@
                     <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
                  
                  <% }); %>  
-        </SELECT> </br>
-        Defense: </br>
+        </SELECT> 
+    </div>
+       <div class="defense">
       
         <SELECT name="DG" size="1">
                 <OPTION>DG</OPTION>
@@ -159,9 +168,9 @@
                         <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
                      
                      <% }); %> 
-        </SELECT> </br>
+        </SELECT> </div>
       
-        Gardien de But: </br>
+        <div class="gardien">
         <SELECT name="G" size="1">
                 <OPTION>G</OPTION>
                 <% listejoueuses.forEach(function(joueuse) { %>
@@ -170,10 +179,13 @@
                  
                  <% }); %> 
         </SELECT>
-            </p>
+    </div>
+        </div>
+        <div class="boxboutonsubmit">
+        <input class="boutonsubmit" type="submit" style="width:130px; height:30px" />
+    </div>
 
-                <input type="submit" />
-            </p>
+            </fieldset>
         </form>
     </body>
     <%- include('footer.ejs') %>

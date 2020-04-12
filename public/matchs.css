@@ -1,8 +1,11 @@
 a {text-decoration: none; color: black;}
 
 h2 {
-    margin-left : 20px;
+    text-align : center;
+    
 }
+
+
 
 
 
@@ -53,6 +56,46 @@ h2 {
     margin-top:30px;
 }
 
-.ajoutmatch {
-    margin-left : 20px;
+
+
+.lignedeco 
+{
+    text-align : center;
+    color:#DCDCDC
+}
+
+fieldset {
+    margin-bottom : 20px;
+    background-color : #D3D3D3;
+    border-radius : 5px;
+   margin-left : -20px;
+    margin-right :20px;
+    display:flex;
+    justify-content : space-around;
+    
+}
+
+.boxboutonsubmit {
+    display : flex;
+    align-items: center;
+}
+
+.boutonsubmit {
+    background-color:#a8c6fa;
+    border-radius : 5px;
+     
+}
+
+.compoform {
+    
+    background-image: url(/public/demiterrain.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.infosform {
+    display : flex;
+    flex-direction : column;
 }

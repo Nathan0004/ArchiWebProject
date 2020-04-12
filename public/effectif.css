@@ -1,1 +1,52 @@
-a {text-decoration: none; color: black;}
+a {
+    text-decoration: none; color: black;}
+
+fieldset {
+    background-color : #a8c6fa;
+    opacity : 0.7;
+    border-radius : 10px;
+    margin-bottom : 5px;
+    text-align: center;
+    
+}
+
+.listeeffectif {
+    border : solid 1px;
+    border-radius : 5px;
+    margin-bottom : 5px;
+    list-style-type: none; 
+    background-color : #a8c6fa;
+    opacity : 0.7;
+    
+}
+
+h2 {
+    text-align: center;
+}
+
+.layoutcoachs {
+    display: flex;
+    justify-content: space-around;
+    background-color : #DCDCDC;
+    border-radius : 5px;
+    margin-bottom : 15px;
+  ;
+    
+}
+
+.lignedeco {
+    text-align : center;
+    color:#DCDCDC;
+}
+
+#coachln {
+    margin-left : 17px;
+}
+
+#joueuseln {
+    margin-left : 14px;
+}
+
+.boutonsubmit {
+    margin-top: 20px;
+}
