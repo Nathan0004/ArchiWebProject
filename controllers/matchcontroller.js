@@ -22,6 +22,7 @@ exports.matchs = function (req, res) {
                             console.log(resultSQL)
                             console.log(resultSQL2)
                             res.render('matchs.ejs', { listematchs: resultSQL3, listecoachs: resultSQL, listejoueuses: resultSQL2 });
+                            
                         }
                     })
                 }
@@ -31,7 +32,8 @@ exports.matchs = function (req, res) {
 
 /* On ajoute un élément à la liste des matchs */
 exports.addmatch = function (req, res) {
-    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse);
+    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.matchcoach, req.body.AG, req.body.BU, req.body.AD,
+        req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G);
     console.log(match);
     connection.query("INSERT INTO Matchs set ?", match, function (error, resultSQL) {
         if (error) {
@@ -69,14 +71,16 @@ exports.updatematchpage = function (req, res) {
             console.log(resultSQL);
             matchs = resultSQL;
             res.render('updatematch.ejs',
-                { id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse });
+                { id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, matchcoach: matchs[0].matchcoach, AG: matchs[0].AG, BU: matchs[0].BU,
+                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G   });
         }
     });
 }
 
 
 exports.updatematch = function (req, res) {
-    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse); console.log(match);
+    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.matchcoach, req.body.AG, req.body.BU, req.body.AD,
+        req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G); console.log(match);
     connection.query("UPDATE Matchs SET ? WHERE id = ?",
         [match, req.body.id], function (error, resultSQL) {
             if (error) {

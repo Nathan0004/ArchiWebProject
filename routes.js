@@ -45,9 +45,6 @@ router.get('/matchs/supprimer/:id', matchcontroller.supprmatch);
 router.get('/matchs/update/:matchid', matchcontroller.updatematchpage);
 router.post('/matchs/update', matchcontroller.updatematch);
 
-
-
-
 /* ROUTES API */
 
 /* affichage Coachs et Joueuses */
@@ -75,5 +72,9 @@ router.post('/api/matchs/ajouter/', matchapicontroller.addmatch);
 router.delete('/api/matchs/supprimer/:id', matchapicontroller.supprmatch);
 /* Modification d'un Match */
 router.put('/api/matchs/update/:matchid', matchapicontroller.updatematch);
+
+
+
+
 
 module.exports = router;

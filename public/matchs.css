@@ -4,9 +4,7 @@ h2 {
     margin-left : 20px;
 }
 
-select {
-    width : 90px;
-}
+
 
 .elementmatch {
     background-color : #c5d7f5;
@@ -16,7 +14,7 @@ select {
     list-style : none;
     display:flex;
     justify-content: space-between;
-    height : 230px;
+    height : 245px;
     }
 .infosmatch {
     display:flex;
@@ -24,9 +22,11 @@ select {
 }
 
 .composition {
-    background-color: #13cc66;
+    background-image: url(/public/demiterrain.jpg);
+    background-size: cover;
     width : 400px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
