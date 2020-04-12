@@ -11,24 +11,25 @@
     <h1>Match Update :  <%= id %></h1>
     <form action="/matchs/update" method="POST">
         <input type="hidden" value="<%= id %>" name="id">
-        <label for="mtitre">Titre :</label>
+        <label for="mtitre"><strong>Titre :</strong></label>
         <input id="mtitre" type="text" name="titre" value ="<%= titre %>"><br>
-        <label for="mdate">Date :</label>
+        <label for="mdate"><strong>Date :</strong></label>
         <input id="mdate" type="date" name="date" value ="<%= date %>"><br>
-        <label for="mheure">Heure :</label>
+        <label for="mheure"><strong>Heure :</strong></label>
         <input id="mheure" type="text" name="heure" value ="<%= heure %>"><br>
-        <label for="madresse">Adresse :</label>
+        <label for="madresse"><strong>Adresse :</strong></label>
         <input id="madresse" type="adresse" name="adresse" value ="<%= adresse %>"><br>
-        <SELECT name="coach" size="1">
-            <OPTION>Coach</OPTION>
+        <strong>Coach :</strong> <SELECT name="matchcoach" size="1">
+            <OPTION><%= matchcoach %></OPTION>
             <% listecoachs.forEach(function(coach) { %>
 
                 <OPTION> <%= coach.lastname %> <%= coach.firstname[0] %> </OPTION>
              
              <% }); %> 
-</SELECT>
-    <SELECT name="AG" size="1">
-                <OPTION>AG</OPTION>
+</SELECT> </br>
+<strong>Attaque :</strong> </br>
+     AG : <SELECT name="AG" size="1" >
+                <OPTION><%= AG %></OPTION>
                 <% listejoueuses.forEach(function(joueuse) { %>
 
                     <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
@@ -36,26 +37,26 @@
                  <% }); %> 
     </SELECT>
 
-    <SELECT name="BU" size="1">
-        <OPTION>BU</OPTION>
+    BU : <SELECT name="BU" size="1">
+        <OPTION><%= BU %></OPTION>
         <% listejoueuses.forEach(function(joueuse) { %>
 
             <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
          <% }); %> 
     </SELECT>
 
-    <SELECT name="AD" size="1">
-            <OPTION>AD</OPTION>
+    AD : <SELECT name="AD" size="1">
+            <OPTION><%= AD %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
              
              <% }); %> 
-    </SELECT>
-  
+    </SELECT> </br>
+<strong>Milieu :</strong> </br>
  
-    <SELECT name='MG' size="1">
-            <OPTION>MG</OPTION>
+    MG : <SELECT name='MG' size="1">
+            <OPTION><%= MG %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
@@ -63,8 +64,8 @@
              <% }); %> 
     </SELECT>
 
-    <SELECT name="MC" size="1">
-            <OPTION>MC</OPTION>
+    MC : <SELECT name="MC" size="1">
+            <OPTION><%= MC %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
@@ -72,18 +73,18 @@
              <% }); %> 
     </SELECT>
 
-    <SELECT name="MD" size="1">
-            <OPTION>MD</OPTION>
+    MD : <SELECT name="MD" size="1">
+            <OPTION><%= MD %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
              
              <% }); %>  
-    </SELECT>
+    </SELECT> </br>
+  <strong>Défense : </strong></br>
   
-  
-    <SELECT name="DG" size="1">
-            <OPTION>DG</OPTION>
+    DG : <SELECT name="DG" size="1">
+            <OPTION><%= DG %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
@@ -91,8 +92,8 @@
              <% }); %> 
     </SELECT>
 
-    <SELECT name="DCG" size="1">
-            <OPTION>DCG</OPTION>
+    DCG : <SELECT name="DCG" size="1">
+            <OPTION><%= DCG %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
@@ -100,8 +101,8 @@
              <% }); %> 
     </SELECT>
 
-    <SELECT name="DCD" size="1">
-            <OPTION>DCD</OPTION>
+    DCD : <SELECT name="DCD" size="1">
+            <OPTION><%= DCD %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
@@ -109,18 +110,18 @@
              <% }); %> 
     </SELECT>
 
-    <SELECT name="DD" size="1">
-            <OPTION>DD</OPTION>
+    DD : <SELECT name="DD" size="1">
+            <OPTION><%= DD %></OPTION>
                 <% listejoueuses.forEach(function(joueuse) { %>
 
                     <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>
                  
                  <% }); %> 
-    </SELECT>
+    </SELECT> </br>
+  <strong>Gardien :</strong> </br>
   
-  
-    <SELECT name="G" size="1">
-            <OPTION>G</OPTION>
+    G : <SELECT name="G" size="1">
+            <OPTION><%= G %></OPTION>
             <% listejoueuses.forEach(function(joueuse) { %>
 
                 <OPTION> <%= joueuse.lastname %> <%= joueuse.firstname[0] %> </OPTION>

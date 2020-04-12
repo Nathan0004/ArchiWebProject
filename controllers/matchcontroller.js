@@ -65,17 +65,30 @@ exports.updatematchpage = function (req, res) {
         if (error) {
             res.status(400).send(error);
         }
+        
         else {
-            res.status(200);
-            console.log("MA REPONSE");
-            console.log(resultSQL);
-            matchs = resultSQL;
-            res.render('updatematch.ejs',
+            connection.query(" SELECT * from Coachs;", function (error, resultcoach) {
+                if (error) {
+                    res.status(400).send(error);
+                }
+                else {
+                    connection.query(" SELECT * from Joueuses;", function (error, resultjoueuses) {
+                        if (error) {
+                            res.status(400).send(error);
+                        }
+                        else {
+                            res.status(200);
+                            matchs = resultSQL;
+                            res.render('updatematch.ejs',
                 { id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, matchcoach: matchs[0].matchcoach, AG: matchs[0].AG, BU: matchs[0].BU,
-                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G   });
-        }
-    });
-}
+                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G, listecoachs : resultcoach, listejoueuses : resultjoueuses  });
+                            
+                        }
+                    })
+                }
+            });
+        };
+    })};
 
 
 exports.updatematch = function (req, res) {
