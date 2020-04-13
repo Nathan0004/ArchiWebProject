@@ -11,6 +11,9 @@ const coachapicontroller = require('./controllers/coachapicontroller.js');
 const joueuseapicontroller = require('./controllers/joueuseapicontroller.js');
 const matchapicontroller = require('./controllers/matchapicontroller.js');
 
+/* Routes authentification */
+const sessioncontroller = require('./controllers/sessioncontroller.js');
+
 /* Routes des trois vues principales */
 /* Route pour la page "Accueil" */
 router.get('/accueil', accueilcontroller.accueil);
@@ -73,8 +76,23 @@ router.delete('/api/matchs/supprimer/:id', matchapicontroller.supprmatch);
 /* Modification d'un Match */
 router.put('/api/matchs/update/:matchid', matchapicontroller.updatematch);
 
-
-
+/* Routes Authentif/Session */
+//Ici, on traite le Login
+router.get('/login', sessioncontroller.login );
+// Logout and destroy session
+router.get('/logout', sessioncontroller.logout );
+// Get content endpoint
+router.get('/content', sessioncontroller.content );
+// Send register form
+router.get('/register_form', sessioncontroller.register_form );
+//Save new account
+router.post('/register_save', sessioncontroller.register_save );
+//update user
+router.put('/user/:iduser', sessioncontroller.updateuser );
+//delete user
+router.delete('/user/:iduser', sessioncontroller.deleteuser );
+// Send login form
+router.get('/login_form', sessioncontroller.login_form );
 
 
 module.exports = router;
