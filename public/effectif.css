@@ -1,3 +1,7 @@
+body {
+    background-color :#D3D3D3;
+}
+
 a {
     text-decoration: none; color: black;}
 
@@ -16,7 +20,7 @@ fieldset {
     margin-bottom : 5px;
     list-style-type: none; 
     background-color : #a8c6fa;
-    opacity : 0.7;
+  
     
 }
 
@@ -27,16 +31,18 @@ h2 {
 .layoutcoachs {
     display: flex;
     justify-content: space-around;
-    background-color : #DCDCDC;
+    background-image : url("images/gazonbleu.jpg");
     border-radius : 5px;
     margin-bottom : 15px;
+    margin-left : 20px;
+    margin-right : 20px;
   ;
     
 }
 
 .lignedeco {
     text-align : center;
-    color:#DCDCDC;
+   
 }
 
 #coachln {

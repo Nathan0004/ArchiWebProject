@@ -8,9 +8,11 @@
     </head>
     <%- include('header.ejs') %>
     <body>
+
+            <p class='lignedeco'  > ________________________________________________________________________________________________________________________</p>
         <h2>Matchs</h2>
 
-     <p class='lignedeco'  > ________________________________________________________________________________________________________________________</p>
+     
 
         <ul>
                 
@@ -21,9 +23,9 @@
                 <a href='/matchs/update/<%= match.id %>'> [Modifier match] </a>
                 <a href="/matchs/supprimer/<%= match.id %>">[✘]</a> 
                <h3> <%= match.titre %> </h3>  
-               <p><em>Date et heure:</em> Le <%= match.date %> à <%= match.heure %>   </p> 
-               <p><em>Adresse</em> : <%= match.adresse %> </p>
-               <p><em>Coach du jour</em> : <%= match.matchcoach %> </p>
+               <p><em><strong>Date et heure:</strong></em> Le <%= match.date %> à <%= match.heure %>   </p> 
+               <p><em><strong>Adresse</strong></em> : <%= match.adresse %> </p>
+               <p><em><strong>Coach du jour</strong></em> : <%= match.matchcoach %> </p>
                     </div>
                <div class='composition'>
                     <div class="attaque">
@@ -55,6 +57,7 @@
           
             <p class='lignedeco'  > ________________________________________________________________________________________________________________________</p>
 
+            <h2>Ajouter un Match</h2>
         <form action="/matchs/ajouter/" method="post">
             <p>
                 <fieldset>
