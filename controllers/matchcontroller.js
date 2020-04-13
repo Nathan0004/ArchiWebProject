@@ -93,7 +93,8 @@ exports.updatematchpage = function (req, res) {
 
 exports.updatematch = function (req, res) {
     let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.matchcoach, req.body.AG, req.body.BU, req.body.AD,
-        req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G); console.log(match);
+        req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G); 
+        console.log(match);
     connection.query("UPDATE Matchs SET ? WHERE id = ?",
         [match, req.body.id], function (error, resultSQL) {
             if (error) {

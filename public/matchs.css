@@ -4,12 +4,16 @@ body {
 
 
 a {text-decoration: none; color: black;}
-
 h2 {
     text-align : center;
-    
+}
+h3 {
+    text-align : center;
+    font-size : 20px;
     
 }
+
+
 
 
 
@@ -17,27 +21,38 @@ h2 {
 
 .elementmatch {
     background-image : url("images/gazonbleu.jpg");
-    border-radius : 3px;
+    border-radius : 10px;
+    border : solid;
+    border-color: #7a7a7a;
     margin : 20px;
     margin-left : -20px;
     list-style : none;
     display:flex;
     justify-content: space-between;
-    height : 245px;
+    height : 255px;
     opacity: 0.9;
     }
 .infosmatch {
     display:flex;
     flex-direction: column;
+    flex:2;
+    background-color : #a8c6fa;
+    opacity : 0.6;
+    border-top-left-radius : 10px;
+    border-bottom-left-radius: 10px;
+
 }
 
 .composition {
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: cover;
+    background-size: 450px 260px;
     width : 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    flex:1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius : 10px;
 }
 
 
@@ -98,7 +113,7 @@ fieldset {
 .compoform {
     
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: cover;
+    background-size: 420px 240px;
     display: flex;
     flex-direction: column;
     

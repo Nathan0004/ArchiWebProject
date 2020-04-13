@@ -3,6 +3,7 @@ let bodyParser = require('body-parser'); // Pour les POST
 let connection = require('./db.js');
 var app = express();
 const Routes = require('./routes');
+let cookieparser = require('cookie-parser');
 
 
 
@@ -13,6 +14,9 @@ app.use(bodyParser.json());
 app.use('/', Routes)
 // Lecture du CSS/Images par EJS
 app.use("/public", express.static('public'))
+
+// Utilisation des cookies
+app.use(cookieparser())
 
 
 .listen(8080);
