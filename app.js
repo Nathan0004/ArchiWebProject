@@ -3,7 +3,11 @@ let bodyParser = require('body-parser'); // Pour les POST
 let connection = require('./db.js');
 var app = express();
 const Routes = require('./routes');
-let cookieparser = require('cookie-parser');
+let cookieParser = require('cookie-parser'); 
+let session = require('express-session');
+const logs = (req, res, next) => { console.log(req.sessionID); next();
+}; 
+
 
 
 
@@ -13,10 +17,19 @@ app.use(bodyParser.json());
 // On appelle le fichier Routes
 app.use('/', Routes)
 // Lecture du CSS/Images par EJS
-app.use("/public", express.static('public'))
+app.use("/public", express.static('public'));
+// Initialisation des cookies 
+app.use(cookieParser());
+// Initialisation des "sessions" utilisateurs
+app.use(session({
+    secret: 'my secret',
+    resave: false,
+    saveUninitialized: true,
+  }));
+// Utilisation du Middleware d'authentification
+  app.use(logs)
 
-// Utilisation des cookies
-app.use(cookieparser())
+
 
 
 .listen(8080);
