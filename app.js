@@ -27,17 +27,6 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
   }));
-// Utilisation du Middleware d'authentification (TBD)
-
-// Check login and password
-    let check = function(req, res, next) { 
-        console.log(req.session.iduser);
-       if (req.session && (req.session.iduser >=0 ) )
-             return next();
-           else
-       return res.status(401).send("Access denied ! <a href='/login_form'>Login</a>"); };
-
-
 
 
 app.listen(8080);

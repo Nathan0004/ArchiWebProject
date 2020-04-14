@@ -82,7 +82,7 @@ router.get('/login', sessioncontroller.login );
 // Logout and destroy session
 router.get('/logout', sessioncontroller.logout );
 // Get content endpoint
-router.get('/content', sessioncontroller.content );
+router.get('/userlist', sessioncontroller.userlist );
 // Send register form
 router.get('/register_form', sessioncontroller.register_form );
 //Save new account
