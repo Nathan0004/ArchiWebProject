@@ -22,13 +22,14 @@ exports.matchs = function (req, res) {
                             console.log(resultSQL)
                             console.log(resultSQL2)
                             res.render('matchs.ejs', { listematchs: resultSQL3, listecoachs: resultSQL, listejoueuses: resultSQL2 });
-                            
+
                         }
                     })
                 }
             });
         };
-    })};
+    })
+};
 
 /* On ajoute un élément à la liste des matchs */
 exports.addmatch = function (req, res) {
@@ -61,11 +62,11 @@ exports.updatematchpage = function (req, res) {
 
     let id = req.params.matchid;
     let sql = "Select * from Matchs WHERE `Matchs`.`id` = ? ";
-    connection.query(sql, id, function (error, resultSQL)  {
+    connection.query(sql, id, function (error, resultSQL) {
         if (error) {
             res.status(400).send(error);
         }
-        
+
         else {
             connection.query(" SELECT * from Coachs;", function (error, resultcoach) {
                 if (error) {
@@ -80,21 +81,24 @@ exports.updatematchpage = function (req, res) {
                             res.status(200);
                             matchs = resultSQL;
                             res.render('updatematch.ejs',
-                { id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, matchcoach: matchs[0].matchcoach, AG: matchs[0].AG, BU: matchs[0].BU,
-                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G, listecoachs : resultcoach, listejoueuses : resultjoueuses  });
-                            
+                                {
+                                    id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, matchcoach: matchs[0].matchcoach, AG: matchs[0].AG, BU: matchs[0].BU,
+                                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G, listecoachs: resultcoach, listejoueuses: resultjoueuses
+                                });
+
                         }
                     })
                 }
             });
         };
-    })};
+    })
+};
 
 
 exports.updatematch = function (req, res) {
     let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.matchcoach, req.body.AG, req.body.BU, req.body.AD,
-        req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G); 
-        console.log(match);
+        req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G);
+    console.log(match);
     connection.query("UPDATE Matchs SET ? WHERE id = ?",
         [match, req.body.id], function (error, resultSQL) {
             if (error) {

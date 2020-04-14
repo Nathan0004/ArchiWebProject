@@ -8,20 +8,22 @@
     <title> Update Coach </title>
 </head>
 <%- include('header.ejs') %>
+
 <body>
-    <h2>Coach Update :   <%= firstname %> <%= lastname %></h2>
+    <h2>Coach Update : <%= firstname %> <%= lastname %></h2>
     <fieldset>
-    <form action="/effectif/update/" method="POST">
-        <input type="hidden" value="<%= id %>" name="id">
-        <label for="cfirstname">Prénom :</label>
-        <input id="cfirstname" type="text" name="firstname" value ="<%= firstname %>"><br>
-        <label for="clastname">Nom :</label>
-        <input id="clastname" type="text" name="lastname" value ="<%= lastname %>"><br>
-        
-        <input type="submit" name="save" value="Sauver">
-        <a href="/effectif"> <input type="button" value="Retour"> </a>
+        <form action="/effectif/update/" method="POST">
+            <input type="hidden" value="<%= id %>" name="id">
+            <label for="cfirstname">Prénom :</label>
+            <input id="cfirstname" type="text" name="firstname" value="<%= firstname %>"><br>
+            <label for="clastname">Nom :</label>
+            <input id="clastname" type="text" name="lastname" value="<%= lastname %>"><br>
+
+            <input type="submit" name="save" value="Sauver">
+            <a href="/effectif"> <input type="button" value="Retour"> </a>
     </fieldset>
     </form>
 </body>
 <%- include('footer.ejs') %>
+
 </html>

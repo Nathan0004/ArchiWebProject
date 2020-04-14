@@ -78,21 +78,21 @@ router.put('/api/matchs/update/:matchid', matchapicontroller.updatematch);
 
 /* Routes Authentif/Session */
 //Ici, on traite le Login
-router.get('/login', sessioncontroller.login );
+router.get('/login', sessioncontroller.login);
 // Logout and destroy session
-router.get('/logout', sessioncontroller.logout );
+router.get('/logout', sessioncontroller.logout);
 // Get content endpoint
-router.get('/userlist', sessioncontroller.userlist );
+router.get('/userlist', sessioncontroller.userlist);
 // Send register form
-router.get('/register_form', sessioncontroller.register_form );
+router.get('/register_form', sessioncontroller.register_form);
 //Save new account
-router.post('/register_save', sessioncontroller.register_save );
+router.post('/register_save', sessioncontroller.register_save);
 //update user
-router.put('/user/:iduser', sessioncontroller.updateuser );
+router.put('/user/:iduser', sessioncontroller.updateuser);
 //delete user
-router.delete('/user/:iduser', sessioncontroller.deleteuser );
+router.delete('/user/:iduser', sessioncontroller.deleteuser);
 // Send login form
-router.get('/login_form', sessioncontroller.login_form );
+router.get('/login_form', sessioncontroller.login_form);
 
 
 module.exports = router;

@@ -3,12 +3,8 @@ let bodyParser = require('body-parser'); // Pour les POST
 let connection = require('./db.js');
 var app = express();
 const Routes = require('./routes');
-let cookieParser = require('cookie-parser'); 
+let cookieParser = require('cookie-parser');
 let session = require('express-session');
-
-
-
-
 
 
 // on indique à notre fichier d'utiliser BodyParser 
@@ -23,10 +19,10 @@ app.use("/public", express.static('public'));
 app.use(cookieParser());
 // Initialisation des "sessions" utilisateurs
 app.use(session({
-    secret: 'my secret',
-    resave: false,
-    saveUninitialized: true,
-  }));
+  secret: 'my secret',
+  resave: false,
+  saveUninitialized: true,
+}));
 
 
 app.listen(8080);

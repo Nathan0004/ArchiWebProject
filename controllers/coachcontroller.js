@@ -55,7 +55,7 @@ exports.updatecoachpage = function (req, res) {
 
     let id = req.params.coachid;
     let sql = "Select * from Coachs WHERE `Coachs`.`id` = ? ";
-    connection.query(sql, id, function (error, resultSQL)  {
+    connection.query(sql, id, function (error, resultSQL) {
         if (error) {
             res.status(400).send(error);
         }

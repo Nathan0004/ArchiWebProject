@@ -1,6 +1,6 @@
 body {
     background-color :#D3D3D3;
-}
+     }
 
 fieldset {
     background-color : #a8c6fa;
@@ -11,15 +11,15 @@ fieldset {
     }
 
 
-    #clastname {
-        margin-left : 17px;
-        margin-bottom : 10px;
-        
+#clastname {
+    margin-left : 17px;
+    margin-bottom : 10px;
+            
     }
 
 
-    #jlastname {
-        margin-left : 17px;
-        margin-bottom : 10px;
-        
+#jlastname {
+    margin-left : 17px;
+    margin-bottom : 10px;
+            
     }

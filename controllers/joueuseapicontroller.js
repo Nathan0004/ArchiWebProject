@@ -9,9 +9,9 @@ exports.addjoueuse = function (req, res) {
     console.log(joueuse);
     connection.query("INSERT INTO Joueuses set ?", joueuse, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({"message":error});
+            res.status(400).json({ "message": error });
         } else {
-            res.status(200).json({"message":success});
+            res.status(200).json({ "message": success });
         }
     });
 };
@@ -20,9 +20,9 @@ exports.addjoueuse = function (req, res) {
 exports.supprjoueuse = function (req, res) {
     let sql = "DELETE FROM `Joueuses` WHERE `Joueuses`.`id` = ?"; connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
-            res.status(400).json({"message":error});
+            res.status(400).json({ "message": error });
         } else {
-            res.status(200).json({"message":success});
+            res.status(200).json({ "message": success });
         }
     });
 };
@@ -32,9 +32,9 @@ exports.updatejoueusepage = function (req, res) {
 
     let id = req.params.joueuseid;
     let sql = "Select * from Joueuses WHERE `Joueuses`.`id` = ? ";
-    connection.query(sql, id, function (error, resultSQL)  {
+    connection.query(sql, id, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({"message":error});
+            res.status(400).json({ "message": error });
         }
         else {
             res.status(200);
@@ -49,15 +49,15 @@ exports.updatejoueusepage = function (req, res) {
 
 
 exports.updatejoueuse = function (req, res) {
-    let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname); 
+    let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname);
     console.log(joueuse);
     connection.query("UPDATE Joueuses SET ? WHERE id = ?",
         [joueuse, req.body.id], function (error, resultSQL) {
             if (error) {
                 console.log(error);
-                res.status(400).json({"message":error});
+                res.status(400).json({ "message": error });
             } else {
-                res.status(200).json({"message":success});
+                res.status(200).json({ "message": success });
             }
         })
 };

@@ -8,20 +8,22 @@
     <title> Update Joueuse </title>
 </head>
 <%- include('header.ejs') %>
+
 <body>
-    <h1>Joueuse Update :  <%= id %></h1>
+    <h1>Joueuse Update : <%= id %></h1>
     <form action="/effectifj/update" method="POST">
         <fieldset>
-        <input type="hidden" value="<%= id %>" name="id">
-        <label for="jfirstname">Prénom :</label>
-        <input id="jfirstname" type="text" name="firstname" value ="<%= firstname %>"><br>
-        <label for="jlastname">Nom :</label>
-        <input id="jlastname" type="text" name="lastname" value ="<%= lastname %>"><br>
-        <input type="submit" name="save" value="Sauver">
-        <a href="/effectif"> <input type="button" value="Retour"> </a>
-    </fieldset>
+            <input type="hidden" value="<%= id %>" name="id">
+            <label for="jfirstname">Prénom :</label>
+            <input id="jfirstname" type="text" name="firstname" value="<%= firstname %>"><br>
+            <label for="jlastname">Nom :</label>
+            <input id="jlastname" type="text" name="lastname" value="<%= lastname %>"><br>
+            <input type="submit" name="save" value="Sauver">
+            <a href="/effectif"> <input type="button" value="Retour"> </a>
+        </fieldset>
     </form>
 
 </body>
 <%- include('footer.ejs') %>
+
 </html>

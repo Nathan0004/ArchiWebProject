@@ -32,7 +32,7 @@ exports.updatejoueusepage = function (req, res) {
 
     let id = req.params.joueuseid;
     let sql = "Select * from Joueuses WHERE `Joueuses`.`id` = ? ";
-    connection.query(sql, id, function (error, resultSQL)  {
+    connection.query(sql, id, function (error, resultSQL) {
         if (error) {
             res.status(400).send(error);
         }
@@ -49,7 +49,7 @@ exports.updatejoueusepage = function (req, res) {
 
 
 exports.updatejoueuse = function (req, res) {
-    let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname); 
+    let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname);
     console.log(joueuse);
     connection.query("UPDATE Joueuses SET ? WHERE id = ?",
         [joueuse, req.body.id], function (error, resultSQL) {

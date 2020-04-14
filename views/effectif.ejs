@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Effectif Victorious Secrets</title>
-        <link rel="stylesheet" href="/public/effectif.css" />
-    </head>
-    <%- include('header.ejs') %>
-    <body>
-            <p class ='lignedeco'>____________________________________________________________________________________________________________________________</p>
-        <h2>Coachs</h2>
-        <div class='layoutcoachs'>
-<div>
-        <form class ="formaddcoach" action="/effectif/ajouter/" method="post" >
-            <fieldset>
-                <legend><strong>Ajouter un Coach :</strong> </legend> </br>
-             Prénom:<input type="text" name="firstname" id="coachfn" autofocus /> </br>
-             Nom:<input type="text" name="lastname" id="coachln" autofocus /> </br>
-             
-                <input class="boutonsubmit" type="submit" value="Ajouter Coach" />
-            </fieldset>
-            
-        </form>
-        
+
+<head>
+    <title>Effectif Victorious Secrets</title>
+    <link rel="stylesheet" href="/public/effectif.css" />
+</head>
+<%- include('header.ejs') %>
+
+<body>
+    <p class='lignedeco'>
+        ____________________________________________________________________________________________________________________________
+    </p>
+    <h2>Coachs</h2>
+    <div class='layoutcoachs'>
+        <div>
+            <form class="formaddcoach" action="/effectif/ajouter/" method="post">
+                <fieldset>
+                    <legend><strong>Ajouter un Coach :</strong> </legend> </br>
+                    Prénom:<input type="text" name="firstname" id="coachfn" autofocus /> </br>
+                    Nom:<input type="text" name="lastname" id="coachln" autofocus /> </br>
+
+                    <input class="boutonsubmit" type="submit" value="Ajouter Coach" />
+                </fieldset>
+
+            </form>
+
         </div>
 
-<div>
-        <ul>
+        <div>
+            <ul>
                 <% listecoachs.forEach(function(coach) { %>
-                    <li class='listeeffectif'><a href="/effectif/supprimer/<%= coach.id%>">[✘]</a> <a href='/effectif/update/<%= coach.id%>'> [Modifier] </a>
-                        <strong> <%= coach.firstname %> <%= coach.lastname %></strong></li>
+                <li class='listeeffectif'><a href="/effectif/supprimer/<%= coach.id%>">[✘]</a> <a
+                        href='/effectif/update/<%= coach.id%>'> [Modifier] </a>
+                    <strong> <%= coach.firstname %> <%= coach.lastname %></strong></li>
                 <% }); %>
-                </ul>
-        
+            </ul>
+
         </div>
+    </div>
+    <p class='lignedeco'>
+        ____________________________________________________________________________________________________________________________
+    </p>
+    <h2>Joueuses</h2>
+    <div class='layoutcoachs'>
+        <div>
+            <form class="formaddjoueuse" action="/effectifj/ajouter/" method="post">
+                <fieldset>
+                    <legend><strong>Ajouter une Joueuse : </strong></legend> </br>
+                    Prénom:<input type="text" name="firstname" id="joueusefn" autofocus /> </br>
+                    Nom: <input type="text" name="lastname" id="joueuseln" autofocus /> </br>
+                    <input class="boutonsubmit" type="submit" value="Ajouter Joueuse" />
+                </fieldset>
+
+            </form>
         </div>
-<p class ='lignedeco'>____________________________________________________________________________________________________________________________</p>
-        <h2>Joueuses</h2>
-        <div class='layoutcoachs'>
-            <div>
-                    <form class ="formaddjoueuse" action="/effectifj/ajouter/" method="post">
-                        <fieldset>
-                            <legend><strong>Ajouter une Joueuse : </strong></legend> </br>
-                        Prénom:<input type="text" name="firstname" id="joueusefn" autofocus /> </br>
-                        Nom:   <input type="text" name="lastname" id="joueuseln" autofocus /> </br>
-                            <input class="boutonsubmit" type="submit" value="Ajouter Joueuse" />
-                        </fieldset>
-                        
-                    </form>
-        </div>
-<div>
-        
-        <ul>
+        <div>
+
+            <ul>
                 <% listejoueuses.forEach(function(joueuse) { %>
-                    <li class='listeeffectif' ><a href="/effectifj/supprimer/<%= joueuse.id %>">[✘]</a> <a href='/effectifj/update/<%= joueuse.id%>'> [Modifier] </a>
-                         <strong><%= joueuse.firstname %> <%= joueuse.lastname %></strong></li>
+                <li class='listeeffectif'><a href="/effectifj/supprimer/<%= joueuse.id %>">[✘]</a> <a
+                        href='/effectifj/update/<%= joueuse.id%>'> [Modifier] </a>
+                    <strong><%= joueuse.firstname %> <%= joueuse.lastname %></strong></li>
                 <% }); %>
-                </ul>
+            </ul>
         </div>
-        </div>
-    </body>
-    <%- include('footer.ejs') %>
+    </div>
+</body>
+<%- include('footer.ejs') %>
+
 </html>
