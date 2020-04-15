@@ -1,9 +1,9 @@
 
 let connection = require('../db.js');
 let User = require('../models/usermodel.js');
-let user = { username: "admin", password: "1234" };
 let listeusers = [];
-listeusers.push(user);
+
+
 
 // Check login and password
 let check = function (req, res, next) {

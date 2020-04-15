@@ -6,7 +6,11 @@ const Routes = require('./routes');
 let cookieParser = require('cookie-parser');
 let session = require('express-session');
 
-
+app.use(session({
+  secret: 'my secret',
+  resave: false,
+  saveUninitialized: true,
+}));
 // on indique à notre fichier d'utiliser BodyParser 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -18,11 +22,7 @@ app.use("/public", express.static('public'));
 //Initialisation des cookies 
 app.use(cookieParser());
 // Initialisation des "sessions" utilisateurs
-app.use(session({
-  secret: 'my secret',
-  resave: false,
-  saveUninitialized: true,
-}));
+
 
 
 app.listen(8080);
