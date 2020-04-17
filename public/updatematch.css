@@ -1,3 +1,7 @@
+h1 {
+    text-align : center;
+}
+
 .boxboutonsubmit {
     display : flex;
     align-items: center;

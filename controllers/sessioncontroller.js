@@ -16,7 +16,7 @@ let check = function (req, res, next) {
 };
 
 // Get content endpoint
-exports.userlist =   function (req, res) {
+exports.userlist =  check, function (req, res) {
     
     
     {
@@ -35,10 +35,10 @@ exports.userlist =   function (req, res) {
     }
 };
 //Ici, on traite le Login
-exports.login =  function (req, res) {
+exports.login = function (req, res) {
     listeusers.forEach(function(user) {
         if (req.query.username === user.username && req.query.password === user.password) {
-            req.session.id = user.id;
+            
             res.send("login success! <a href='/userlist'>Goto content</a> ");
         }
         ;

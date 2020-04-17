@@ -1,6 +1,8 @@
 let connection = require('../db.js');
 let Match = require('../models/matchmodel.js');
 listematchs = [];
+
+
 /* Route pour la page "Matchs" + l'import SQL des matchs */
 exports.matchs = function (req, res) {
     connection.query(" SELECT * from Matchs;", function (error, resultSQL3) {

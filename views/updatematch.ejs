@@ -10,7 +10,7 @@
 <%- include('header.ejs') %>
 
 <body>
-    <h1>Match Update : </h1>
+
     <form action="/matchs/update" method="POST">
         <fieldset>
             <legend><strong>Modification Match :</strong> </legend>
@@ -35,7 +35,7 @@
             </div>
             <div class="compoform">
                 <div class='attaque'>
-                    
+
                     <SELECT name="AG" size="1">
                         <OPTION><%= AG %></OPTION>
                         <% listejoueuses.forEach(function(joueuse) { %>
@@ -63,7 +63,7 @@
                     </SELECT> </br>
                 </div>
                 <div class="milieu">
-    
+
 
                     <SELECT name='MG' size="1">
                         <OPTION><%= MG %></OPTION>
@@ -93,7 +93,7 @@
                     </SELECT> </br>
                 </div>
                 <div class="defense">
-                  
+
 
                     <SELECT name="DG" size="1">
                         <OPTION><%= DG %></OPTION>
@@ -132,7 +132,7 @@
                     </SELECT> </br>
                 </div>
                 <div class="gardien">
-                  
+
 
                     <SELECT name="G" size="1">
                         <OPTION><%= G %></OPTION>
