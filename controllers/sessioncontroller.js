@@ -1,13 +1,15 @@
 
 let connection = require('../db.js');
 let User = require('../models/usermodel.js');
+let user = {username: "admin", password: "1234"};
 let listeusers = [];
+listeusers.push(user);
 
 
 
 // Check login and password
 let check = function (req, res, next) {
-    console.log(req.session.iduser);
+    
     if (req.session && (req.session.iduser >= 0))
         return next();
     else
@@ -17,8 +19,8 @@ let check = function (req, res, next) {
 exports.login = function (req, res) {
     listeusers.forEach(user => {
         if (req.query.username === user.username && req.query.password === user.password) {
-            req.session.iduser = iduser;
-            res.send("login success! <a href='/content'>Goto content</a> ");
+            req.session.iduser = user.iduser;
+            res.send("login success! <a href='/userlist'>Goto content</a> ");
         }
         ;
     });
@@ -34,8 +36,9 @@ exports.logout = function (req, res) {
 };
 
 // Get content endpoint
-exports.userlist = function (req, res) {
-    check();
+exports.userlist =  check(), function (req, res) {
+    
+    
     {
         connection.query(" SELECT * from Users;", function (error, resultSQL) {
             if (error) {
@@ -68,7 +71,7 @@ exports.register_save = function (req, res) {
         if (error) {
             res.status(400).send(error);
         } else {
-            res.status(201).redirect('/userlist');
+            res.status(201).redirect('/login_form');
         }
     });
 };
@@ -76,7 +79,7 @@ exports.register_save = function (req, res) {
 //update user
 exports.updateuserpage = function (req, res) {
 
-    let userid = req.params.iduser;
+    let iduser = req.params.iduser;
     let sql = "Select * from Users WHERE `Users`.`id` = ? ";
     connection.query(sql, iduser, function (error, resultSQL) {
         if (error) {

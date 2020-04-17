@@ -3,8 +3,12 @@ let bodyParser = require('body-parser'); // Pour les POST
 let connection = require('./db.js');
 var app = express();
 const Routes = require('./routes');
-let cookieParser = require('cookie-parser');
 let session = require('express-session');
+let cookieParser = require('cookie-parser');
+
+//Initialisation des cookies 
+app.use(cookieParser());
+// Initialisation des "sessions" utilisateurs
 
 app.use(session({
   secret: 'my secret',
@@ -19,9 +23,6 @@ app.use('/', Routes)
 // Lecture du CSS/Images par EJS
 app.use("/public", express.static('public'));
 
-//Initialisation des cookies 
-app.use(cookieParser());
-// Initialisation des "sessions" utilisateurs
 
 
 
