@@ -11,6 +11,7 @@
        
         
                 <% listeusers.forEach(function(user) { %>
+                    <a href="/delete/user/<%= user.id %>">[✘]</a>
                          <%= user.username %> 
                 <% }); %>
                 

@@ -88,9 +88,9 @@ router.get('/register_form', sessioncontroller.register_form);
 //Save new account
 router.post('/register_save', sessioncontroller.register_save);
 //update user
-router.put('/user/:iduser', sessioncontroller.updateuser);
+router.put('/user/:id', sessioncontroller.updateuser);
 //delete user
-router.delete('/user/:iduser', sessioncontroller.deleteuser);
+router.get('/delete/user/:id', sessioncontroller.deleteuser);
 // Send login form
 router.get('/login_form', sessioncontroller.login_form);
 
