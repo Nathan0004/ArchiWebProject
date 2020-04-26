@@ -10,6 +10,8 @@ let cookieParser = require('cookie-parser');
 app.use(cookieParser());
 // Initialisation des "sessions" utilisateurs
 
+
+
 app.use(session({
   secret: 'my secret',
   resave: false,
@@ -18,6 +20,8 @@ app.use(session({
 // on indique à notre fichier d'utiliser BodyParser 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+
 // On appelle le fichier Routes
 app.use('/', Routes)
 // Lecture du CSS/Images par EJS
@@ -26,4 +30,4 @@ app.use("/public", express.static('public'));
 
 
 
-app.listen(8080);
+app.listen(8000);

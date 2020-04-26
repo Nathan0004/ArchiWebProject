@@ -9,9 +9,9 @@ exports.addjoueuse = function (req, res) {
     console.log(joueuse);
     connection.query("INSERT INTO Joueuses set ?", joueuse, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         } else {
-            res.status(200).json({ "message": success });
+            res.status(200).json({ "message": 'success' });
         }
     });
 };
@@ -20,9 +20,9 @@ exports.addjoueuse = function (req, res) {
 exports.supprjoueuse = function (req, res) {
     let sql = "DELETE FROM `Joueuses` WHERE `Joueuses`.`id` = ?"; connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error '});
         } else {
-            res.status(200).json({ "message": success });
+            res.status(200).json({ "message": 'success' });
         }
     });
 };
@@ -34,7 +34,7 @@ exports.updatejoueusepage = function (req, res) {
     let sql = "Select * from Joueuses WHERE `Joueuses`.`id` = ? ";
     connection.query(sql, id, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         }
         else {
             res.status(200);
@@ -55,9 +55,9 @@ exports.updatejoueuse = function (req, res) {
         [joueuse, req.body.id], function (error, resultSQL) {
             if (error) {
                 console.log(error);
-                res.status(400).json({ "message": error });
+                res.status(400).json({ "message": 'error' });
             } else {
-                res.status(200).json({ "message": success });
+                res.status(200).json({ "message": 'success' });
             }
         })
 };

@@ -32,7 +32,7 @@ exports.addcoach = function (req, res) {
     console.log(coach);
     connection.query("INSERT INTO Coachs set ?", coach, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         } else {
             res.status(200).json({ "message": 'success' });
         }
@@ -43,9 +43,9 @@ exports.addcoach = function (req, res) {
 exports.supprcoach = function (req, res) {
     let sql = "DELETE FROM `Coachs` WHERE `Coachs`.`id` = ?"; connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         } else {
-            res.json({ "message": success });
+            res.json({ "message": 'success' });
         }
     });
 };
@@ -77,7 +77,7 @@ exports.updatecoach = function (req, res) {
         [coach, req.body.id], function (error, resultSQL) {
             if (error) {
                 console.log(error);
-                res.status(400).json({ "message": error });
+                res.status(400).json({ "message": 'error' });
             } else {
                 res.status(202).redirect('/effectif');
             }

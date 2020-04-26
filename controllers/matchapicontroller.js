@@ -5,17 +5,17 @@ listematchs = [];
 exports.matchs = function (req, res) {
     connection.query(" SELECT * from Matchs;", function (error, resultSQL3) {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         }
         else {
             connection.query(" SELECT * from Coachs;", function (error, resultSQL) {
                 if (error) {
-                    res.status(400).json({ "message": error });
+                    res.status(400).json({ "message": 'error' });
                 }
                 else {
                     connection.query(" SELECT * from Joueuses;", function (error, resultSQL2) {
                         if (error) {
-                            res.status(400).json({ "message": error });
+                            res.status(400).json({ "message": 'error' });
                         }
                         else {
                             res.status(200);
@@ -37,9 +37,9 @@ exports.addmatch = function (req, res) {
     console.log(match);
     connection.query("INSERT INTO Matchs set ?", match, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         } else {
-            res.status(200).json({ "message": success });
+            res.status(200).json({ "message": 'success' });
         }
     });
 };
@@ -49,9 +49,9 @@ exports.supprmatch = function (req, res) {
     let sql = "DELETE FROM `Matchs` WHERE `Matchs`.`id` = ?";
     connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         } else {
-            res.status(200).json({ "message": success });
+            res.status(200).json({ "message": 'success' });
         }
     });
 };
@@ -63,21 +63,21 @@ exports.updatematchpage = function (req, res) {
     let sql = "Select * from Matchs WHERE `Matchs`.`id` = ? ";
     connection.query(sql, id, function (error, resultSQL) {
         if (error) {
-            res.status(400).json({ "message": error });
+            res.status(400).json({ "message": 'error' });
         }
 
         else {
             connection.query(" SELECT * from Coachs;", function (error, resultcoach) {
                 if (error) {
-                    res.status(400).json({ "message": error });
+                    res.status(400).json({ "message": 'error' });
                 }
                 else {
                     connection.query(" SELECT * from Joueuses;", function (error, resultjoueuses) {
                         if (error) {
-                            res.status(400).json({ "message": error });
+                            res.status(400).json({ "message": 'error' });
                         }
                         else {
-                            res.status(200).json({ "message": success });
+                            res.status(200).json({ "message": 'success' });
                             matchs = resultSQL;
                             res.json(
                                 {
@@ -102,9 +102,9 @@ exports.updatematch = function (req, res) {
         [match, req.body.id], function (error, resultSQL) {
             if (error) {
                 console.log(error);
-                res.status(400).json({ "message": error });
+                res.status(400).json({ "message": 'error' });
             } else {
-                res.status(200).json({ "message": success });
+                res.status(200).json({ "message": 'success' });
             }
         })
 };

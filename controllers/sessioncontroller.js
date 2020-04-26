@@ -16,7 +16,7 @@ let check = function (req, res, next) {
 };
 
 // Get content endpoint
-exports.userlist =  check, function (req, res) {
+exports.userlist =   function (req, res) {
     
     
     {
@@ -36,6 +36,7 @@ exports.userlist =  check, function (req, res) {
 };
 //Ici, on traite le Login
 exports.login = function (req, res) {
+    console.log(req.query);
     listeusers.forEach(function(user) {
         console.log(listeusers);
         if  (req.query.username === user.username && req.query.password === user.password) {
