@@ -88,7 +88,7 @@ h3 {
     }
 
 fieldset {
-    margin-bottom : 20px;
+    margin-bottom : 10px;
     background-image : url("images/gazonbleu.jpg");
     border-radius : 5px;
    margin-left : -20px;
@@ -123,4 +123,9 @@ fieldset {
 .infosform {
     display : flex;
     flex-direction : column;
+    }
+ 
+.legendecompo {
+        font-size : 13px;
+        margin-bottom : 15px;
     }
