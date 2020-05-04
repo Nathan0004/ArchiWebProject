@@ -36,7 +36,7 @@ exports.userlist =   function (req, res) {
 };
 //Ici, on traite le Login
 exports.login = function (req, res) {
-    console.log(req.query);
+    
     listeusers.forEach(function(user) {
         console.log(listeusers);
         if  (req.query.username === user.username && req.query.password === user.password) {
@@ -126,6 +126,7 @@ exports.deleteuser = function (req, res) {
 
 // Send login form
 exports.login_form = function (req, res) {
+    
     let username = "";
     if (req.cookies && req.cookies.username)
         username = req.cookies.username

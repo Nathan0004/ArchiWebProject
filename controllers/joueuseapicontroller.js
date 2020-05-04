@@ -3,6 +3,20 @@ let connection = require('../db.js');
 let Joueuse = require('../models/joueusemodel.js');
 listejoueuses = [];
 
+
+/* affichage joueuses */ 
+exports.effectifj = function (req, res) {
+    connection.query(" SELECT * from Joueuses;", function (error, resultSQL) {
+        if (error) {
+            res.status(400).json({ "message": error });
+        }
+                else {
+                    res.status(200);
+                    console.log(resultSQL)
+                    res.json({ listejoueuses: resultSQL });
+                }
+            })
+        };
 /* On ajoute un élément à la liste des joueuses */
 exports.addjoueuse = function (req, res) {
     let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname);

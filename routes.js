@@ -50,31 +50,32 @@ router.post('/matchs/update', matchcontroller.updatematch);
 
 /* ROUTES API */
 
-/* affichage Coachs et Joueuses */
-router.get('/api/listecoachslistejoueuses/', coachapicontroller.effectif);
-
+/* affichage Coachs */
+router.get('/api/effectif', coachapicontroller.effectif);
 /* Ajout d'un coach */
-router.post('/api/effectif/ajouter/', coachapicontroller.addcoach);
+router.post('/api/effectif/', coachapicontroller.addcoach);
 /* Suppression d'un coach */
-router.delete('/api/effectif/supprimer/:id', coachapicontroller.supprcoach);
+router.delete('/api/effectif/id', coachapicontroller.supprcoach);
 /* Modification d'un Coach */
-router.put('/api/effectif/update/:coachid', coachapicontroller.updatecoach);
+router.put('/api/effectif/id', coachapicontroller.updatecoach);
 
+/* Affichage Joueuses */
+router.get('/api/effectifj', joueuseapicontroller.effectifj);
 /* Ajout d'une Joueuse */
-router.post('/api/effectifj/ajouter/', joueuseapicontroller.addjoueuse);
+router.post('/api/effectifj/', joueuseapicontroller.addjoueuse);
 /* Suppression d'une Joueuse */
-router.delete('/api/effectifj/supprimer/:id', joueuseapicontroller.supprjoueuse);
+router.delete('/api/effectifj/id', joueuseapicontroller.supprjoueuse);
 /* Modification d'une Joueuse */
-router.put('/api/effectifj/update/:joueuseid', joueuseapicontroller.updatejoueuse);
+router.put('/api/effectifj/id', joueuseapicontroller.updatejoueuse);
 
 /* Affichage liste des matches */
-router.get('/api/listematchs/', matchapicontroller.matchs);
+router.get('/api/matchs/', matchapicontroller.matchs);
 /* Ajout d'un Match */
-router.post('/api/matchs/ajouter/', matchapicontroller.addmatch);
+router.post('/api/matchs/', matchapicontroller.addmatch);
 /* Suppression d'un Match */
-router.delete('/api/matchs/supprimer/:id', matchapicontroller.supprmatch);
+router.delete('/api/matchs/id', matchapicontroller.supprmatch);
 /* Modification d'un Match */
-router.put('/api/matchs/update/:matchid', matchapicontroller.updatematch);
+router.put('/api/matchs/id', matchapicontroller.updatematch);
 
 /* Routes Authentif/Session */
 //Ici, on traite le Login

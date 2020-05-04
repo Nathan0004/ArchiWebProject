@@ -9,21 +9,13 @@ exports.effectif = function (req, res) {
         if (error) {
             res.status(400).json({ "message": error });
         }
-        else {
-            connection.query(" SELECT * from Joueuses;", function (error, resultSQL2) {
-                if (error) {
-                    res.status(400).json({ "message": error });
-                }
                 else {
                     res.status(200);
                     console.log(resultSQL)
-                    console.log(resultSQL2)
-                    res.json({ listecoachs: resultSQL, listejoueuses: resultSQL2 });
+                    res.json({ listecoachs: resultSQL });
                 }
             })
-        }
-    });
-};
+        };
 
 /* On ajoute un élément à la liste des coachs */
 exports.addcoach = function (req, res) {
