@@ -17,6 +17,26 @@ exports.effectif = function (req, res) {
             })
         };
 
+/* Affichage d'un coach */
+exports.getcoach = function (req, res) {
+
+    let id = req.params.id;
+    let sql = "Select * from Coachs WHERE `Coachs`.`id` = ? ";
+    connection.query(sql, id, function (error, resultSQL) {
+        if (error) {
+            res.status(400).json({ "message": error });
+        }
+        else {
+            res.status(200);
+            console.log("MA REPONSE");
+            console.log(resultSQL);
+            coachs = resultSQL;
+            res.json({ id: coachs[0].id, firstname: coachs[0].firstname, lastname: coachs[0].lastname });
+        }
+    });
+}
+
+
 /* On ajoute un élément à la liste des coachs */
 exports.addcoach = function (req, res) {
 
