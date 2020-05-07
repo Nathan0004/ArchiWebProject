@@ -16,7 +16,7 @@ let check = function (req, res, next) {
 };
 
 // Get content endpoint
-exports.userlist =   function (req, res) {
+exports.userlist =  function (req, res) {
     
     
     {

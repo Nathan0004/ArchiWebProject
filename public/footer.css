@@ -1,5 +1,5 @@
 footer {
-    background-image: url('images/fond1.png');
+    background-color : rgba(58, 49, 49, 0.8); 
     display: flex;
     align-items: center;
     justify-content: center;

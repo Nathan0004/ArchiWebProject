@@ -1,4 +1,8 @@
 
+body {
+    background-image: url('./images/marbre.jpg');
+}
+
 h1 {
     text-align : center;
 }
@@ -30,22 +34,21 @@ h1 {
 
 fieldset {
         margin-bottom : 20px;
-        background-image : url("images/gazonbleu.jpg");
+        background-color : #a8c6fab6;
         border-radius : 5px;
        margin-left : 20px;
         margin-right :20px;
         display:flex;
         justify-content : space-around;
         height: 245px;
-        opacity : 0.8;
         
+
         }
 
         .infosmatch {
             display:flex;
             flex-direction: column;
             flex:2;
-            background-color : #a8c6fa;
             opacity : 0.6;
             border-top-left-radius : 10px;
             border-bottom-left-radius: 10px;
