@@ -1,5 +1,6 @@
 body {
-        background-color :#D3D3D3;
+    background-image: url('./images/marbre.jpg');
+    background-size: cover;
     }
 
 
@@ -22,7 +23,7 @@ h3 {
 
 
 .elementmatch {
-    background-image : url("images/gazonbleu.jpg");
+    background-color : rgba(58, 49, 49, 0.8); 
     border-radius : 10px;
     border : solid;
     border-color: #7a7a7a;
@@ -32,7 +33,7 @@ h3 {
     display:flex;
     justify-content: space-between;
     height : 255px;
-    opacity: 0.9;
+    
     }
 .infosmatch {
     display:flex;
@@ -89,14 +90,14 @@ h3 {
 
 fieldset {
     margin-bottom : 10px;
-    background-image : url("images/gazonbleu.jpg");
+    background-color : rgba(58, 49, 49, 0.8); 
     border-radius : 5px;
    margin-left : -20px;
     margin-right :20px;
     display:flex;
     justify-content : space-around;
     height: 245px;
-    opacity : 0.8;
+    opacity : 0.9;
     
     }
 
@@ -129,3 +130,44 @@ fieldset {
         font-size : 13px;
         margin-bottom : 15px;
     }
+
+    .findField {
+        float :right;
+        margin-right: 20px;
+        margin-top: 10px;
+       }
+
+       .deletebutton {
+        border-radius: 5px;
+        background: red;
+        border:none;
+        font:bold 12px Verdana;
+      padding: 8px 20px ;
+      transition-duration: 0.4s;
+    }
+    .deletebutton:hover {
+      background-color: rgba(150, 27, 27, 0.685); 
+      
+     }
+    
+     .updatebutton {
+        border-radius: 5px;
+        background: green;
+        border:none;
+        font:bold 12px Verdana;
+      padding: 8px 20px ;
+      transition-duration: 0.4s;
+     
+    }
+    .updatebutton:hover {
+      background-color: rgba(19, 104, 47, 0.685); 
+      
+     }
+
+     .searchbutton {
+        background-color : #a8c6fab6;
+        border:none;
+       font:bold 12px Verdana;
+       border:solid 0.2px;
+       
+       }

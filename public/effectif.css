@@ -1,28 +1,23 @@
 body {
-    background-color :#D3D3D3;
+    background-image: url('./images/marbre.jpg');
+    background-size: cover;
 }
 
 a {
-    text-decoration: none; color: black;}
+    text-decoration: none; 
+    color:rgba(223, 244, 248, 0.884);
+}
 
 fieldset {
-    background-color : #a8c6fa;
-    opacity : 0.7;
+    background-color : #a8c6fab6;
     border-radius : 10px;
     margin-bottom : 5px;
     text-align: center;
+    margin-top : 5px;
     
 }
 
-.listeeffectif {
-    border : solid 1px;
-    border-radius : 5px;
-    margin-bottom : 5px;
-    list-style-type: none; 
-    background-color : #a8c6fa;
-  
-    
-}
+
 
 h2 {
     text-align: center;
@@ -31,14 +26,11 @@ h2 {
 .layoutcoachs {
     display: flex;
     justify-content: space-around;
-    background-image : url("images/gazonbleu.jpg");
     border-radius : 5px;
     margin-bottom : 15px;
-    margin-left : 20px;
-    margin-right : 20px;
-    border : solid;
-    border-color: #7a7a7a;
-  ;
+    margin-left : 100px;
+    margin-right : 100px;
+    background-color : rgba(58, 49, 49, 0.8); 
     
 }
 
@@ -57,4 +49,58 @@ h2 {
 
 .boutonsubmit {
     margin-top: 20px;
+}
+
+.findField {
+ float :right;
+ margin-right: 20px;
+ margin-top: 10px;
+}
+
+table {
+    margin-top : 10px;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+td {
+    border: solid 0.2px;
+    background-color : #a8c6fab6;
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+.deletebutton {
+	border-radius: 5px;
+	background: red;
+	border:none;
+	font:bold 12px Verdana;
+  padding: 8px 20px ;
+  transition-duration: 0.4s;
+  margin-right: 10px;
+}
+.deletebutton:hover {
+  background-color: rgba(150, 27, 27, 0.685); 
+  
+ }
+
+ .updatebutton {
+	border-radius: 5px;
+	background: green;
+	border:none;
+	font:bold 12px Verdana;
+  padding: 8px 20px ;
+  margin: 10px 5px;
+  transition-duration: 0.4s;
+}
+.updatebutton:hover {
+  background-color: rgba(19, 104, 47, 0.685); 
+  
+ }
+.searchbutton {
+ background-color : #a8c6fab6;
+ border:none;
+font:bold 12px Verdana;
+border:solid 0.2px;
+
 }

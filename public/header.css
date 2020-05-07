@@ -1,13 +1,16 @@
-header {
-  background-image: url('images/fond1.png');
+
+
+.head {
+  background-image: url('./images/marbre.jpg');
+  background-size: cover;
   display: flex;
   }
 
+
 h1 {
-  color : #7a7a7a;
+  color : rgba(58, 49, 49, 0.9);
   font-size: 80px;
-  margin-left: auto;
-  margin-right: auto;
+  margin : auto 185px;
 }
 
 .logovs {
@@ -15,14 +18,36 @@ h1 {
   width : 200px;
 }
 
-.menu {
+#nav {
+  padding: 0;; margin:0;
+  padding-bottom: 8px;
+  text-align: center;
+  background-color : rgba(58, 49, 49, 0.9);
+  
+}
+#nav li {
+	display: inline;
   list-style: none;
-  display:flex;
-  justify-content: space-around;
-  font-size:18px;
-  background-color:#7a7a7a;
-  margin : auto;
+  
+}
+#nav a {
+	display:inline-block;
+  margin: 0 30px;
+  color:black;
 }
 
+#nav button {
+	border-radius: 5px;
+	background-color : #a8c6fab6;
+	border:none;
+	font:bold 12px Verdana;
+  padding: 14px 40px ;
+  margin-top : 10px;
+  transition-duration: 0.4s;
+}
+ #nav button:hover {
+  background-color: rgba(35, 73, 201, 0.685); /* Green */
+  
+ }
 
 

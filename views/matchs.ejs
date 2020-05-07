@@ -5,11 +5,60 @@
 <head>
     <title>Matchs Victorious Secrets</title>
     <link rel="stylesheet" href="/public/matchs.css" />
+    <script type="text/javascript">
+        function FindNext() {
+            var str = document.getElementById("findField").value;
+            if (str == "") {
+                alert("Le champs doit contenir une valeur pour que la recherche fonctionne");
+                return;
+            }
 
+            var supported = false;
+            var found = false;
+            if (window.find) {        // Firefox, Google Chrome, Safari
+                supported = true;
+                // if some content is selected, the start position of the search 
+                // will be the end position of the selection
+                found = window.find(str);
+            }
+            else {
+                if (document.selection && document.selection.createRange) { // Internet Explorer, Opera before version 10.5
+                    var textRange = document.selection.createRange();
+                    if (textRange.findText) {   // Internet Explorer
+                        supported = true;
+                        // if some content is selected, the start position of the search 
+                        // will be the position after the start position of the selection
+                        if (textRange.text.length > 0) {
+                            textRange.collapse(true);
+                            textRange.move("character", 1);
+                        }
+
+                        found = textRange.findText(str);
+                        if (found) {
+                            textRange.select();
+                        }
+                    }
+                }
+            }
+
+            if (supported) {
+                if (!found) {
+                    alert("Ce Coach/Joueuse n'a pas été trouvé(e)\n" + str);
+                }
+            }
+            else {
+                alert("Veuillez entrer un prénom ou un nom");
+            }
+        }
+    </script>
 </head>
 <%- include('header.ejs') %>
 
 <body>
+        <div class='findField'>
+                <input type="text" id="findField" value="Recherche Match" size="20" />
+                <button class="searchbutton" onclick="FindNext ();">Recherche</button>
+            </div><br>
 
     <p class='lignedeco'>
         ________________________________________________________________________________________________________________________
@@ -26,8 +75,9 @@
 
 
                 <div>
-                    <a href='/matchs/update/<%= match.id %>'> [Modifier match] </a>
-                    <a href="/matchs/supprimer/<%= match.id %>">[✘]</a>
+                        <button class="deletebutton"><a href="/matchs/supprimer/<%= match.id %>">X</a></button>
+                   <button class="updatebutton"> <a href='/matchs/update/<%= match.id %>'> Modifier </a></button>
+                    
                     <h3> <%= match.titre %> </h3>
                 </div>
                 <p><em><strong>Date et heure:</strong></em> Le <%= match.date %> à <%= match.heure %> </p>

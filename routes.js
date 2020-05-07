@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-
+/* constantes routes MVC */
 const accueilcontroller = require('./controllers/accueilcontroller.js');
 const coachcontroller = require('./controllers/coachcontroller.js');
 const joueusecontroller = require('./controllers/joueusecontroller.js');
 const matchcontroller = require('./controllers/matchcontroller.js');
 
-/* routes API */
+/*  constantes routes API */
 const coachapicontroller = require('./controllers/coachapicontroller.js');
 const joueuseapicontroller = require('./controllers/joueuseapicontroller.js');
 const matchapicontroller = require('./controllers/matchapicontroller.js');
@@ -43,7 +43,6 @@ router.post('/effectifj/update', joueusecontroller.updatejoueuse);
 router.post('/matchs/ajouter/', matchcontroller.addmatch);
 /* Supprime un élément de la liste des matchs */
 router.get('/matchs/supprimer/:id', matchcontroller.supprmatch);
-
 /* Modifier un élément de la liste matchs */
 router.get('/matchs/update/:matchid', matchcontroller.updatematchpage);
 router.post('/matchs/update', matchcontroller.updatematch);
