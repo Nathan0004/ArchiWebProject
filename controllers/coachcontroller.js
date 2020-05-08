@@ -16,8 +16,7 @@ exports.effectif = function (req, res) {
                 }
                 else {
                     res.status(200);
-                    console.log(resultSQL)
-                    console.log(resultSQL2)
+                    
                     res.render('effectif.ejs', { listecoachs: resultSQL, listejoueuses: resultSQL2 });
                 }
             })

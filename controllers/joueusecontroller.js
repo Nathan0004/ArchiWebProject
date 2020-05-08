@@ -18,11 +18,13 @@ exports.addjoueuse = function (req, res) {
 
 /* Supprime un élément de la liste des joueuses */
 exports.supprjoueuse = function (req, res) {
-    let sql = "DELETE FROM `Joueuses` WHERE `Joueuses`.`id` = ?"; connection.query(sql, [req.params.id], (error, resultSQL) => {
+    let sql = "DELETE FROM `Joueuses` WHERE `Joueuses`.`id` = ?";
+    connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
             res.status(400).send(error);
         } else {
             res.redirect('/effectif');
+
         }
     });
 };

@@ -57,7 +57,7 @@
 <body>
     <div class='findField'>
         <input type="text" id="findField" value="Recherche Coach/Joueuse" size="23" />
-        <button class='searchbutton'onclick="FindNext();">Recherche</button>
+        <button class='searchbutton' onclick="FindNext();">Recherche</button>
     </div><br>
     <p class='lignedeco'>
         ____________________________________________________________________________________________________________________________
@@ -81,17 +81,17 @@
 
         <div>
             <table>
-            
+
                 <% listecoachs.forEach(function(coach) { %>
-                <tr> 
-                        <td> <strong> <%= coach.firstname %> <%= coach.lastname %></strong></td>
+                <tr>
+                    <td> <strong> <%= coach.firstname %> <%= coach.lastname %></strong></td>
                     <td><button class="updatebutton"><a href='/effectif/update/<%= coach.id%>'> Modifier </a></button>
-                   <button class="deletebutton"><a href="/effectif/supprimer/<%= coach.id%>">X</a></button> </td>
-                    
+                        <button class="deletebutton"><a onclick="if(confirm('Etes-vous sûr de vouloir supprimer ce coach ?')) return true; else return false;" href="/effectif/supprimer/<%= coach.id%>">X</a></button> </td>
+
                 </tr>
                 <% }); %>
-            
-        </table>
+
+            </table>
         </div>
     </div>
     <p class='lignedeco'>
@@ -107,21 +107,28 @@
                     Nom: <input type="text" name="lastname" id="joueuseln" autofocus /> </br>
                     <input class="boutonsubmit" type="submit" value="Ajouter Joueuse" />
                 </fieldset>
- </form>
+            </form>
         </div>
-        
+
         <div>
 
             <table>
                 <% listejoueuses.forEach(function(joueuse) { %>
-                <tr><td> 
+                <tr>
+                    <td>
                         <strong><%= joueuse.firstname %> <%= joueuse.lastname %></strong></td>
-                        <td> <button class="updatebutton"> <a href='/effectifj/update/<%= joueuse.id%>'> Modifier </a></button>
-                    <button class="deletebutton"><a href="/effectifj/supprimer/<%= joueuse.id %>">X</a></button>
-                    
-                    </td></tr>
+                    <td> <button class="updatebutton"> <a href='/effectifj/update/<%= joueuse.id%>'> Modifier
+                            </a></button>
+                        <button class="deletebutton">
+                            <a onclick="if(confirm('Etes-vous sûr de vouloir supprimer cette joueuse ?')) return true; else return false;"
+                                href="/effectifj/supprimer/<%= joueuse.id %>">
+                                X</a>
+                        </button>
+
+                    </td>
+                </tr>
                 <% }); %>
-                </table>
+            </table>
         </div>
     </div>
 </body>

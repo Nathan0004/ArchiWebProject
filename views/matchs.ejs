@@ -75,7 +75,7 @@
 
 
                 <div>
-                        <button class="deletebutton"><a href="/matchs/supprimer/<%= match.id %>">X</a></button>
+                        <button class="deletebutton"><a onclick="if(confirm('Etes-vous sûr de vouloir supprimer cette joueuse ?')) return true; else return false;" href="/matchs/supprimer/<%= match.id %>">X</a></button>
                    <button class="updatebutton"> <a href='/matchs/update/<%= match.id %>'> Modifier </a></button>
                     
                     <h3> <%= match.titre %> </h3>
