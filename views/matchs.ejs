@@ -55,10 +55,10 @@
 <%- include('header.ejs') %>
 
 <body>
-        <div class='findField'>
-                <input type="text" id="findField" value="Recherche Match" size="20" />
-                <button class="searchbutton" onclick="FindNext()">Recherche</button>
-            </div><br>
+    <div class='findField'>
+        <input type="text" id="findField" value="Recherche Match" size="20" />
+        <button class="searchbutton" onclick="FindNext()">Recherche</button>
+    </div><br>
 
     <p class='lignedeco'>
         ________________________________________________________________________________________________________________________
@@ -75,9 +75,11 @@
 
 
                 <div>
-                        <button class="deletebutton"><a onclick="if(confirm('Etes-vous sûr de vouloir supprimer cette joueuse ?')) return true; else return false;" href="/matchs/supprimer/<%= match.id %>">X</a></button>
-                   <button class="updatebutton"> <a href='/matchs/update/<%= match.id %>'> Modifier </a></button>
-                    
+                    <button class="deletebutton"><a
+                            onclick="if(confirm('Etes-vous sûr de vouloir supprimer <%= match.titre %> de la liste des matchs ?')) return true; else return false;"
+                            href="/matchs/supprimer/<%= match.id %>">X</a></button>
+                    <button class="updatebutton"> <a href='/matchs/update/<%= match.id %>'> Modifier </a></button>
+
                     <h3> <%= match.titre %> </h3>
                 </div>
                 <p><em><strong>Date et heure:</strong></em> Le <%= match.date %> à <%= match.heure %> </p>
@@ -249,10 +251,12 @@
 
                 </fieldset>
         </form>
-    <div class='legendecompo'><strong>AG</strong> = Attaquant Gauche <strong>BU</strong> = Buteur <strong>AD</strong> = Attaquant Droit 
-        <strong>MG</strong> = Milieu Gauche <strong>MC</strong> = Milieu Central <strong>MD</strong> = Milieu Droit 
-        <strong>DG</strong> = Defenseur Gauche <strong>DC</strong> = Defenseur Central Gauche
-        <strong>DCD</strong> = Defenseur Central Droit <strong>DD</strong> = Defenseur Droit <strong>G</strong> = Gardien </div>
+        <div class='legendecompo'><strong>AG</strong> = Attaquant Gauche <strong>BU</strong> = Buteur
+            <strong>AD</strong> = Attaquant Droit
+            <strong>MG</strong> = Milieu Gauche <strong>MC</strong> = Milieu Central <strong>MD</strong> = Milieu Droit
+            <strong>DG</strong> = Defenseur Gauche <strong>DC</strong> = Defenseur Central Gauche
+            <strong>DCD</strong> = Defenseur Central Droit <strong>DD</strong> = Defenseur Droit <strong>G</strong> =
+            Gardien </div>
 </body>
 <%- include('footer.ejs') %>
 

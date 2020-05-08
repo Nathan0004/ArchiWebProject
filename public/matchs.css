@@ -48,7 +48,7 @@ h3 {
 
 .composition {
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: 450px 260px;
+    background-size: 435px 260px;
     width : 400px;
     display: flex;
     flex-direction: column;
