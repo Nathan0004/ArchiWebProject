@@ -1,12 +1,12 @@
 class Match {
-    constructor (id, titre, date, heure, adresse, matchcoach, AG, BU, AD, MG, MC, MD, DG, DCG, DCD, DD, G)
+    constructor (id_match, titre, date, heure, adresse, fk_id_coach, AG, BU, AD, MG, MC, MD, DG, DCG, DCD, DD, G)
     {
-        this.id = id;
+        this.id_match = id_match;
         this.titre = titre;
         this.date = date;
         this.heure = heure;
         this.adresse = adresse;
-        this.matchcoach = matchcoach;
+        this.fk_id_coach = fk_id_coach;
         this.AG = AG;
         this.BU = BU;
         this.AD = AD;

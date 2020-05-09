@@ -5,7 +5,7 @@ listematchs = [];
 
 /* Route pour la page "Matchs" + l'import SQL des matchs */
 exports.matchs = function (req, res) {
-    connection.query(" SELECT * from Matchs;", function (error, resultSQL3) {
+    connection.query(" SELECT * from Matchs INNER JOIN Coachs ON Matchs.fk_id_coach = Coachs.id ;", function (error, resultSQL3) {
         if (error) {
             res.status(400).send(error);
         }
@@ -35,7 +35,7 @@ exports.matchs = function (req, res) {
 
 /* On ajoute un élément à la liste des matchs */
 exports.addmatch = function (req, res) {
-    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.matchcoach, req.body.AG, req.body.BU, req.body.AD,
+    let match = new Match(req.body.id_match, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.fk_id_coach, req.body.AG, req.body.BU, req.body.AD,
         req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G);
     console.log(match);
     connection.query("INSERT INTO Matchs set ?", match, function (error, resultSQL) {
@@ -49,8 +49,8 @@ exports.addmatch = function (req, res) {
 
 /* Supprime un élément de la liste des matchs */
 exports.supprmatch = function (req, res) {
-    let sql = "DELETE FROM `Matchs` WHERE `Matchs`.`id` = ?";
-    connection.query(sql, [req.params.id], (error, resultSQL) => {
+    let sql = "DELETE FROM `Matchs` WHERE `Matchs`.`id_match` = ?";
+    connection.query(sql, [req.params.id_match], (error, resultSQL) => {
         if (error) {
             res.status(400).send(error);
         } else {
@@ -62,9 +62,9 @@ exports.supprmatch = function (req, res) {
 /* modifier un élément de la liste matchs */
 exports.updatematchpage = function (req, res) {
 
-    let id = req.params.matchid;
-    let sql = "Select * from Matchs WHERE `Matchs`.`id` = ? ";
-    connection.query(sql, id, function (error, resultSQL) {
+    let id_match = req.params.id_match;
+    let sql = " SELECT * from Matchs INNER JOIN Coachs ON Matchs.fk_id_coach = Coachs.id WHERE `Matchs`.`id_match` = ? ;";
+    connection.query(sql, id_match, function (error, resultSQL) {
         if (error) {
             res.status(400).send(error);
         }
@@ -84,8 +84,8 @@ exports.updatematchpage = function (req, res) {
                             matchs = resultSQL;
                             res.render('updatematch.ejs',
                                 {
-                                    id: matchs[0].id, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, matchcoach: matchs[0].matchcoach, AG: matchs[0].AG, BU: matchs[0].BU,
-                                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G, listecoachs: resultcoach, listejoueuses: resultjoueuses
+                                    id_match: matchs[0].id_match, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, fk_id_coach: matchs[0].fk_id_coach, AG: matchs[0].AG, BU: matchs[0].BU,
+                                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G, firstname: matchs[0].firstname, lastname: matchs[0].lastname,listecoachs: resultcoach, listejoueuses: resultjoueuses
                                 });
 
                         }
@@ -98,11 +98,11 @@ exports.updatematchpage = function (req, res) {
 
 
 exports.updatematch = function (req, res) {
-    let match = new Match(req.body.id, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.matchcoach, req.body.AG, req.body.BU, req.body.AD,
+    let match = new Match(req.body.id_match, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.fk_id_coach, req.body.AG, req.body.BU, req.body.AD,
         req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G);
     console.log(match);
-    connection.query("UPDATE Matchs SET ? WHERE id = ?",
-        [match, req.body.id], function (error, resultSQL) {
+    connection.query("UPDATE Matchs SET ? WHERE id_match = ?",
+        [match, req.body.id_match], function (error, resultSQL) {
             if (error) {
                 console.log(error);
                 res.status(400).send(error);

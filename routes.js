@@ -42,9 +42,9 @@ router.post('/effectifj/update', joueusecontroller.updatejoueuse);
 /* On ajoute un élément à la liste des matchs */
 router.post('/matchs/ajouter/', matchcontroller.addmatch);
 /* Supprime un élément de la liste des matchs */
-router.get('/matchs/supprimer/:id', matchcontroller.supprmatch);
+router.get('/matchs/supprimer/:id_match', matchcontroller.supprmatch);
 /* Modifier un élément de la liste matchs */
-router.get('/matchs/update/:matchid', matchcontroller.updatematchpage);
+router.get('/matchs/update/:id_match', matchcontroller.updatematchpage);
 router.post('/matchs/update', matchcontroller.updatematch);
 
 /* ROUTES API */
@@ -71,15 +71,15 @@ router.delete('/api/effectifj/:id', joueuseapicontroller.supprjoueuse);
 router.put('/api/effectifj/:id', joueuseapicontroller.updatejoueuse);
 
 /* affichage d'un match */
-router.get('/api/matchs/:id', matchapicontroller.getmatch);
+router.get('/api/matchs/:id_match', matchapicontroller.getmatch);
 /* Affichage liste des matches */
 router.get('/api/matchs/', matchapicontroller.matchs);
 /* Ajout d'un Match */
 router.post('/api/matchs/', matchapicontroller.addmatch);
 /* Suppression d'un Match */
-router.delete('/api/matchs/:id', matchapicontroller.supprmatch);
+router.delete('/api/matchs/:id_match', matchapicontroller.supprmatch);
 /* Modification d'un Match */
-router.put('/api/matchs/:id', matchapicontroller.updatematch);
+router.put('/api/matchs/:id_match', matchapicontroller.updatematch);
 
 /* Routes Authentif/Session */
 //Ici, on traite le Login

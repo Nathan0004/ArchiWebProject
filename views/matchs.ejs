@@ -77,14 +77,14 @@
                 <div>
                     <button class="deletebutton"><a
                             onclick="if(confirm('Etes-vous sûr de vouloir supprimer <%= match.titre %> de la liste des matchs ?')) return true; else return false;"
-                            href="/matchs/supprimer/<%= match.id %>">X</a></button>
-                    <button class="updatebutton"> <a href='/matchs/update/<%= match.id %>'> Modifier </a></button>
+                            href="/matchs/supprimer/<%= match.id_match %>">X</a></button>
+                    <button class="updatebutton"> <a href='/matchs/update/<%= match.id_match %>'> Modifier </a></button>
 
                     <h3> <%= match.titre %> </h3>
                 </div>
                 <p><em><strong>Date et heure:</strong></em> Le <%= match.date %> à <%= match.heure %> </p>
                 <p><em><strong>Adresse</strong></em> : <%= match.adresse %> </p>
-                <p><em><strong>Coach du jour</strong></em> : <%= match.matchcoach %> </p>
+                <p><em><strong>Coach du jour</strong></em> : <%= match.firstname %> <%= match.lastname %> </p>
             </div>
             <div class='composition'>
                 <div class="attaque">
@@ -130,14 +130,15 @@
                         Heure: <input type="time" value="00:00" name="heure" id="timeda" autofocus /></br>
                         Adresse: <input type="text" name="adresse" id="matchad" autofocus /></br>
                         Coach du jour:
-                        <SELECT name="matchcoach" size="1">
+                        <SELECT name="fk_id_coach" size="1">
                             <OPTION>Coach</OPTION>
                             <% listecoachs.forEach(function(coach) { %>
 
-                            <OPTION> <%= coach.lastname %> <%= coach.firstname[0] %> </OPTION>
+                            <OPTION value="<%= coach.id %>"> <%= coach.firstname %> <%= coach.lastname %>  </OPTION>
 
                             <% }); %>
                         </SELECT>
+                        
                     </div>
                     <div class="compoform">
                         <div class='attaque'>

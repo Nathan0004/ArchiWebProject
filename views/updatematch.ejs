@@ -15,7 +15,7 @@
         <fieldset>
             <legend><strong>Modification Match :</strong> </legend>
             <div class="infosform">
-                <input type="hidden" value="<%= id %>" name="id">
+                <input type="hidden" value="<%= id_match %>" name="id_match">
                 <label for="mtitre"><strong>Titre :</strong></label>
                 <input id="mtitre" type="text" name="titre" value="<%= titre %>"><br>
                 <label for="mdate"><strong>Date :</strong></label>
@@ -24,11 +24,11 @@
                 <input id="mheure" type="time" name="heure" value="<%= heure %>"><br>
                 <label for="madresse"><strong>Adresse :</strong></label>
                 <input id="madresse" type="adresse" name="adresse" value="<%= adresse %>"><br>
-                <strong>Coach :</strong> <SELECT name="matchcoach" size="1">
-                    <OPTION><%= matchcoach %></OPTION>
+                <strong>Coach :</strong> <SELECT name="fk_id_coach" size="1">
+                    <OPTION value="<%= fk_id_coach %>"> <%= firstname %> <%= lastname %></OPTION>
                     <% listecoachs.forEach(function(coach) { %>
 
-                    <OPTION> <%= coach.lastname %> <%= coach.firstname[0] %> </OPTION>
+                    <OPTION value= "<%= coach.id %>"> <%= coach.firstname %>  <%= coach.lastname %></OPTION>
 
                     <% }); %>
                 </SELECT> </br>
