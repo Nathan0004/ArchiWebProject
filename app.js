@@ -9,9 +9,6 @@ let cookieParser = require('cookie-parser');
 //Initialisation des cookies 
 app.use(cookieParser());
 // Initialisation des "sessions" utilisateurs
-
-
-
 app.use(session({
   secret: 'my secret',
   resave: false,

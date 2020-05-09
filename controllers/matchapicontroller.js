@@ -77,43 +77,7 @@ exports.supprmatch = function (req, res) {
     });
 };
 
-/* modifier un élément de la liste matchs */
-exports.updatematchpage = function (req, res) {
-
-    let id_match = req.params.id_match;
-    let sql = "Select * from Matchs WHERE `Matchs`.`id_match` = ? ";
-    connection.query(sql, id_match, function (error, resultSQL) {
-        if (error) {
-            res.status(400).json({ "message": 'error' });
-        }
-
-        else {
-            connection.query(" SELECT * from Coachs;", function (error, resultcoach) {
-                if (error) {
-                    res.status(400).json({ "message": 'error' });
-                }
-                else {
-                    connection.query(" SELECT * from Joueuses;", function (error, resultjoueuses) {
-                        if (error) {
-                            res.status(400).json({ "message": 'error' });
-                        }
-                        else {
-                            res.status(200).json({ "message": 'success' });
-                            matchs = resultSQL;
-                            res.json(
-                                {
-                                    id_match: matchs[0].id_match, titre: matchs[0].titre, date: matchs[0].date, heure: matchs[0].heure, adresse: matchs[0].adresse, fk_id_coach: matchs[0].fk_id_coach, AG: matchs[0].AG, BU: matchs[0].BU,
-                                    AD: matchs[0].AD, MG: matchs[0].MG, MC: matchs[0].MC, MD: matchs[0].MD, DG: matchs[0].DG, DCG: matchs[0].DCG, DCD: matchs[0].DCD, DD: matchs[0].DD, G: matchs[0].G,   listecoachs: resultcoach, listejoueuses: resultjoueuses
-                                });
-
-                        }
-                    })
-                }
-            });
-        };
-    })
-};
-
+/* route update */
 
 exports.updatematch = function (req, res) {
     let match = new Match(req.body.id_match, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.fk_id_coach, req.body.AG, req.body.BU, req.body.AD,

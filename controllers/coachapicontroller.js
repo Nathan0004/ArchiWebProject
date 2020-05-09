@@ -63,24 +63,7 @@ exports.supprcoach = function (req, res) {
 };
 
 
-/* modifier un élément de la liste coachs */
-exports.updatecoachpage = function (req, res) {
-
-    let id = req.params.coachid;
-    let sql = "Select * from Coachs WHERE `Coachs`.`id` = ? ";
-    connection.query(sql, id, function (error, resultSQL) {
-        if (error) {
-            res.status(400).json({ "message": error });
-        }
-        else {
-            res.status(200);
-            console.log("MA REPONSE");
-            console.log(resultSQL);
-            coachs = resultSQL;
-            res.json({ id: coachs[0].id, firstname: coachs[0].firstname, lastname: coachs[0].lastname });
-        }
-    });
-}
+/* route update */
 
 exports.updatecoach = function (req, res) {
     let coach = new Coach(req.body.id, req.body.firstname, req.body.lastname);
