@@ -60,6 +60,8 @@ exports.supprmatch = function (req, res) {
 };
 
 /* modifier un élément de la liste matchs */
+
+/* On renvoie la liste des matchs, des coachs et des joueuses vers la page updatematch */
 exports.updatematchpage = function (req, res) {
 
     let id_match = req.params.id_match;
@@ -96,7 +98,7 @@ exports.updatematchpage = function (req, res) {
     })
 };
 
-
+/* fonction d'update */
 exports.updatematch = function (req, res) {
     let match = new Match(req.body.id_match, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.fk_id_coach, req.body.AG, req.body.BU, req.body.AD,
         req.body.MG, req.body.MC, req.body.MD, req.body.DG, req.body.DCG, req.body.DCD, req.body.DD, req.body.G);

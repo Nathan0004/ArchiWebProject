@@ -1,36 +1,21 @@
 let connection = require('../db.js');
 let Match = require('../models/matchmodel.js');
 listematchs = [];
-/* Route pour la page "Matchs" + l'import SQL des matchs */
+/* Affichage de tous les Matchs dans une API au format JSON */
 exports.matchs = function (req, res) {
     connection.query(" SELECT * from Matchs INNER JOIN Coachs ON Matchs.fk_id_coach = Coachs.id ;", function (error, resultSQL3) {
         if (error) {
             res.status(400).json({ "message": 'error' });
         }
+
         else {
-            connection.query(" SELECT * from Coachs;", function (error, resultSQL) {
-                if (error) {
-                    res.status(400).json({ "message": 'error' });
-                }
-                else {
-                    connection.query(" SELECT * from Joueuses;", function (error, resultSQL2) {
-                        if (error) {
-                            res.status(400).json({ "message": 'error' });
-                        }
-                        else {
-                            res.status(200);
-                            console.log(resultSQL)
-                            console.log(resultSQL2)
-                            res.json({ listematchs: resultSQL3 });
-                        }
-                    })
-                }
-            });
-        };
+            res.status(200);
+            res.json({ listematchs: resultSQL3 });
+        }
     })
 };
 
-/* Selection d'un match */
+/* Selection d'un match (API) */
 exports.getmatch = function (req, res) {
 
     let id_match = req.params.id_match;
@@ -41,7 +26,6 @@ exports.getmatch = function (req, res) {
         }
         else {
             res.status(200);
-            console.log("MA REPONSE");
             console.log(resultSQL);
             matchs = resultSQL;
             res.json({
@@ -65,7 +49,7 @@ exports.addmatch = function (req, res) {
     });
 };
 
-/* Supprime un élément de la liste des matchs */
+/* Supprime un élément de la liste des matchs(route API) */
 exports.supprmatch = function (req, res) {
     let sql = "DELETE FROM `Matchs` WHERE `Matchs`.`id_match` = ?";
     connection.query(sql, [req.params.id_match], (error, resultSQL) => {
@@ -77,7 +61,7 @@ exports.supprmatch = function (req, res) {
     });
 };
 
-/* route update */
+/* Update d'un match (route API) */
 
 exports.updatematch = function (req, res) {
     let match = new Match(req.body.id_match, req.body.titre, req.body.date, req.body.heure, req.body.adresse, req.body.fk_id_coach, req.body.AG, req.body.BU, req.body.AD,

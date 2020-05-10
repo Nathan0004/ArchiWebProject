@@ -65,7 +65,7 @@
 
     <h2>Coachs</h2>
     <div class='layoutcoachs'>
-        <div>
+        <div> <!-- Formulaire d'ajout de Coach-->
             <form class="formaddcoach" action="/effectif/ajouter/" method="post">
                 <fieldset>
                     <legend><strong>Ajouter un Coach :</strong> </legend> </br>
@@ -80,7 +80,7 @@
         </div>
 
         <div>
-            <table>
+            <table> <!-- Table d'affichage des Coachs-->
 
                 <% listecoachs.forEach(function(coach) { %>
                 <tr>
@@ -99,7 +99,7 @@
     </p>
     <h2>Joueuses</h2>
     <div class='layoutcoachs'>
-        <div>
+        <div> <!-- Formulaire d'ajout de Joueuse-->
             <form class="formaddjoueuse" action="/effectifj/ajouter/" method="post">
                 <fieldset>
                     <legend><strong>Ajouter une Joueuse : </strong></legend> </br>
@@ -112,7 +112,7 @@
 
         <div>
 
-            <table>
+            <table> <!-- Table d'affichage des joueuses-->
                 <% listejoueuses.forEach(function(joueuse) { %>
                 <tr>
                     <td>

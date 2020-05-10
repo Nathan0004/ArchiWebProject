@@ -3,6 +3,8 @@ let connection = require('../db.js');
 let Joueuse = require('../models/joueusemodel.js');
 listejoueuses = [];
 
+/* le GET des joueuses vers la page effectif se fait via CoachController */
+
 /* On ajoute un élément à la liste des joueuses */
 exports.addjoueuse = function (req, res) {
     let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname);

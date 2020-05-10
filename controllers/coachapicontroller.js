@@ -3,21 +3,21 @@ let connection = require('../db.js');
 let Coach = require('../models/coachmodel.js');
 listecoachs = [];
 
-/* Route pour la page "Effectif" + l'import SQL de Coachs + l'import SQL de Joueuses */
+/* Affichage de la liste des Coachs au format JSON (route API) */
 exports.effectif = function (req, res) {
     connection.query(" SELECT * from Coachs;", function (error, resultSQL) {
         if (error) {
             res.status(400).json({ "message": error });
         }
-                else {
-                    res.status(200);
-                    console.log(resultSQL)
-                    res.json({ listecoachs: resultSQL });
-                }
-            })
-        };
+        else {
+            res.status(200);
+            console.log(resultSQL)
+            res.json({ listecoachs: resultSQL });
+        }
+    })
+};
 
-/* Affichage d'un coach */
+/* Affichage d'un coach dans l'API au format JSON (route API) */
 exports.getcoach = function (req, res) {
 
     let id = req.params.id;
@@ -28,7 +28,6 @@ exports.getcoach = function (req, res) {
         }
         else {
             res.status(200);
-            console.log("MA REPONSE");
             console.log(resultSQL);
             coachs = resultSQL;
             res.json({ id: coachs[0].id, firstname: coachs[0].firstname, lastname: coachs[0].lastname });
@@ -37,7 +36,7 @@ exports.getcoach = function (req, res) {
 }
 
 
-/* On ajoute un élément à la liste des coachs */
+/* On ajoute un coach à la liste des coachs au format JSON (route API) */
 exports.addcoach = function (req, res) {
 
     let coach = new Coach(req.body.id, req.body.firstname, req.body.lastname);
@@ -51,7 +50,7 @@ exports.addcoach = function (req, res) {
     });
 };
 
-/* Supprime un élément de la liste des coachs */
+/* Supprime un élément de la liste des coachs (route API) */
 exports.supprcoach = function (req, res) {
     let sql = "DELETE FROM `Coachs` WHERE `Coachs`.`id` = ?"; connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
@@ -63,7 +62,7 @@ exports.supprcoach = function (req, res) {
 };
 
 
-/* route update */
+/* Update d'un Coach (route API) */
 
 exports.updatecoach = function (req, res) {
     let coach = new Coach(req.body.id, req.body.firstname, req.body.lastname);
@@ -74,7 +73,7 @@ exports.updatecoach = function (req, res) {
                 console.log(error);
                 res.status(400).json({ "message": 'error' });
             } else {
-                res.status(202).redirect('/effectif');
+                res.status(202).json({ "message": 'success' });
             }
         })
 };

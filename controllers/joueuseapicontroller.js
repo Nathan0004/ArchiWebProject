@@ -4,7 +4,7 @@ let Joueuse = require('../models/joueusemodel.js');
 listejoueuses = [];
 
 
-/* affichage joueuses */ 
+/* affichage joueuses (route API) */ 
 exports.effectifj = function (req, res) {
     connection.query(" SELECT * from Joueuses;", function (error, resultSQL) {
         if (error) {
@@ -18,7 +18,7 @@ exports.effectifj = function (req, res) {
             })
         };
 
-/* Affichage d'une joueuse */ 
+/* Affichage d'une joueuse (route API) */ 
 exports.getjoueuse = function (req, res) {
 
     let id = req.params.id;
@@ -38,7 +38,7 @@ exports.getjoueuse = function (req, res) {
     });
 }
     
-/* On ajoute un élément à la liste des joueuses */
+/* On ajoute une Joueuse à la liste des joueuses (route API) */
 exports.addjoueuse = function (req, res) {
     let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname);
     console.log(joueuse);
@@ -51,7 +51,7 @@ exports.addjoueuse = function (req, res) {
     });
 };
 
-/* Supprime un élément de la liste des joueuses */
+/* Supprime un élément de la liste des joueuses (route API) */
 exports.supprjoueuse = function (req, res) {
     let sql = "DELETE FROM `Joueuses` WHERE `Joueuses`.`id` = ?"; connection.query(sql, [req.params.id], (error, resultSQL) => {
         if (error) {
@@ -62,7 +62,7 @@ exports.supprjoueuse = function (req, res) {
     });
 };
 
-/* route update */
+/* Update d'une Joueuse (route API) */
 
 exports.updatejoueuse = function (req, res) {
     let joueuse = new Joueuse(req.body.id, req.body.firstname, req.body.lastname);

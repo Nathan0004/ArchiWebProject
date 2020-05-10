@@ -9,19 +9,17 @@ a {
     color:rgba(223, 244, 248, 0.884);
 }
 
+h2 {
+    text-align: center;
+}
+
+/* CSS formulaire d'ajout de coachs/joueuses */
 fieldset {
     background-color : #a8c6fab6;
     border-radius : 10px;
     margin-bottom : 5px;
     text-align: center;
-    margin-top : 5px;
-    
-}
-
-
-
-h2 {
-    text-align: center;
+    margin-top : 5px;    
 }
 
 .layoutcoachs {
@@ -31,13 +29,11 @@ h2 {
     margin-bottom : 15px;
     margin-left : 100px;
     margin-right : 100px;
-    background-color : rgba(58, 49, 49, 0.8); 
-    
+    background-color : rgba(58, 49, 49, 0.8);    
 }
 
 .lignedeco {
-    text-align : center;
-   
+    text-align : center;   
 }
 
 #coachln {
@@ -52,11 +48,22 @@ h2 {
     margin-top: 20px;
 }
 
+/* Champs et bouton de recherche */
+
 .findField {
  float :right;
  margin-right: 20px;
  margin-top: 10px;
 }
+
+.searchbutton {
+ background-color : #a8c6fab6;
+ border:none;
+font:bold 12px Verdana;
+border:solid 0.2px;
+}
+
+/* CSS pour le tableau Coachs/Joueuses */
 
 table {
     margin-top : 10px;
@@ -94,15 +101,8 @@ td {
   margin: 10px 5px;
   transition-duration: 0.4s;
 }
+
 .updatebutton:hover {
   background-color: rgba(19, 104, 47, 0.685); 
-  
- }
-.searchbutton {
- background-color : #a8c6fab6;
- border:none;
-font:bold 12px Verdana;
-border:solid 0.2px;
-
 }
 
