@@ -17,21 +17,24 @@ h3 {
 .lignedeco {
     text-align : center;
     }
+/* Modification de la marge de ul car elle avait un effet négatif sur la marge globale de la page*/
+ul {
+        margin-left: -40px;
+    }
 
-    /* css concernant l'affichage de chaque match */
+    /* css concernant l'affichage des matchs */
     /* element match global */
 .elementmatch {
     background-color : rgba(58, 49, 49, 0.8); 
     border-radius : 10px;
     border : solid;
     border-color: #7a7a7a;
-    margin : 20px;
-    margin-left : -20px;
     list-style : none;
     display:flex;
     justify-content: space-between;
     height : 255px;
-    
+    margin-right : 30px;
+    margin-left : 30px;
     }
 
     /* Informations du match sans la compo */
@@ -48,7 +51,7 @@ h3 {
 /* css lié à la composition de chaque match */
 .composition {
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: 435px 260px;
+    background-size: 445px 255px;
     width : 400px;
     display: flex;
     flex-direction: column;
@@ -110,12 +113,12 @@ fieldset {
     margin-bottom : 10px;
     background-color : rgba(58, 49, 49, 0.8); 
     border-radius : 5px;
-   margin-left : -20px;
-    margin-right :20px;
     display:flex;
     justify-content : space-around;
     height: 245px;
     opacity : 0.9;
+    margin-right : 30px;
+    margin-left : 30px;
     
     }
 /* bouton ajouter + son conteneur */
@@ -129,11 +132,11 @@ fieldset {
     border-radius : 5px;
      
     }
-/* Compo d'ajout de match */
+/* Composition d'ajout de match */
 .compoform {
     
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: 420px 240px;
+    background-size: 420px 230px;
     display: flex;
     flex-direction: column;
     }

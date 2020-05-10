@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-/* constantes routes MVC */
+/* Const routes MVC */
 const accueilcontroller = require('./controllers/accueilcontroller.js');
 const coachcontroller = require('./controllers/coachcontroller.js');
 const joueusecontroller = require('./controllers/joueusecontroller.js');
 const matchcontroller = require('./controllers/matchcontroller.js');
 
-/*  constantes routes API */
+/*  Const routes API */
 const coachapicontroller = require('./controllers/coachapicontroller.js');
 const joueuseapicontroller = require('./controllers/joueuseapicontroller.js');
 const matchapicontroller = require('./controllers/matchapicontroller.js');
 
-/* Routes authentification */
+/* Const Routes authentification */
 const sessioncontroller = require('./controllers/sessioncontroller.js');
 
 /* Routes des trois vues principales */
@@ -22,7 +22,7 @@ router.get('/effectif', coachcontroller.effectif);
 /* Route pour la page "Matchs" */
 router.get('/matchs', matchcontroller.matchs);
 
-
+/* CRUD COACHS MVC */
 /* On ajoute un élément à la liste des coachs */
 router.post('/effectif/ajouter/', coachcontroller.addcoach);
 /* Supprime un élément de la liste des coachs */
@@ -31,6 +31,7 @@ router.get('/effectif/supprimer/:id', coachcontroller.supprcoach);
 router.get('/effectif/update/:coachid', coachcontroller.updatecoachpage);
 router.post('/effectif/update', coachcontroller.updatecoach);
 
+/* CRUD JOUEUSES MVC */
 /* On ajoute un élément à la liste des joueuses */
 router.post('/effectifj/ajouter/', joueusecontroller.addjoueuse);
 /* Supprime un élément de la liste des joueuses */
@@ -39,6 +40,7 @@ router.get('/effectifj/supprimer/:id', joueusecontroller.supprjoueuse);
 router.get('/effectifj/update/:joueuseid', joueusecontroller.updatejoueusepage);
 router.post('/effectifj/update', joueusecontroller.updatejoueuse);
 
+/* CRUD MATCHS MVC */
 /* On ajoute un élément à la liste des matchs */
 router.post('/matchs/ajouter/', matchcontroller.addmatch);
 /* Supprime un élément de la liste des matchs */
