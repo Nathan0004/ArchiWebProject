@@ -32,9 +32,10 @@ ul {
     list-style : none;
     display:flex;
     justify-content: space-between;
-    height : 255px;
+    height : 100%;
     margin-right : 30px;
     margin-left : 30px;
+    margin-bottom : 20px;
     }
 
     /* Informations du match sans la compo */
@@ -51,8 +52,7 @@ ul {
 /* css lié à la composition de chaque match */
 .composition {
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: 445px 255px;
-    width : 400px;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -136,13 +136,15 @@ fieldset {
 .compoform {
     
     background-image: url(/public/images/demiterrain.jpg);
-    background-size: 420px 230px;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
+    width : 40%;
     }
 .legendecompo {
     font-size : 13px;
     margin-bottom : 15px;
+    text-align: center;
     }
 /* box d'informations du formulaire d'ajout ( sans compo ) */
 .infosform {
@@ -153,7 +155,6 @@ fieldset {
 /* CSS lié au champs de recherche */
 .findField {
     float :right;
-    margin-right: 20px;
     margin-top: 10px;
     }
 
@@ -163,3 +164,37 @@ fieldset {
     font:bold 12px Verdana;
     border:solid 0.2px;
         }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .compoform { width : 60%;       
+    }
+}
+
+@media (max-width: 800px) {
+    .elementmatch {
+        display : flex;
+        flex-direction : column;       
+    }
+    fieldset {
+        display : flex;
+        flex-direction : column;
+        margin-top : 10px;
+        margin-bottom : 10px;
+        height : 450px;         
+    }
+    input { 
+        width : 200px;
+    }
+    select {
+        width : 70px;
+    }
+    .compoform {
+        width :100%
+    }
+    .boutonsubmit {
+        margin-top : 5px;
+        margin-left : auto;
+        margin-right : auto;
+    }         
+    }

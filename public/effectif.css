@@ -52,7 +52,6 @@ fieldset {
 
 .findField {
  float :right;
- margin-right: 20px;
  margin-top: 10px;
 }
 
@@ -69,14 +68,24 @@ table {
     margin-top : 10px;
     margin-bottom: 10px;
     border-collapse: collapse;
+    
+    
 }
 
 td {
     border: solid 0.2px;
     background-color : #a8c6fab6;
-    padding-left:10px;
-    padding-right: 10px;
+    padding-left:5px;
+    padding-right: 5px;
 }
+
+.espaceboutons {
+    text-align : center;
+    width : 170px;
+}
+
+
+
 
 .deletebutton {
 	border-radius: 5px;
@@ -85,7 +94,9 @@ td {
 	font:bold 12px Verdana;
   padding: 8px 20px ;
   transition-duration: 0.4s;
-  margin-right: 10px;
+  margin-top : 5px;
+  margin-bottom : 5px;
+ 
 }
 .deletebutton:hover {
   background-color: rgba(150, 27, 27, 0.685); 
@@ -98,7 +109,6 @@ td {
 	border:none;
 	font:bold 12px Verdana;
   padding: 8px 20px ;
-  margin: 10px 5px;
   transition-duration: 0.4s;
 }
 
@@ -106,3 +116,20 @@ td {
   background-color: rgba(19, 104, 47, 0.685); 
 }
 
+@media (max-width: 800px) {
+    
+.layoutcoachs {
+    display : flex;
+    flex-direction : column;
+    margin-left : 10px;
+    margin-right : 10px;
+    align-items : center;
+    }
+.deletebutton {
+    padding : 4px 10px;
+    }
+
+.updatebutton {
+    padding: 4px 10px;
+    }
+  }

@@ -84,8 +84,8 @@
 
                 <% listecoachs.forEach(function(coach) { %>
                 <tr>
-                    <td> <strong> <%= coach.firstname %> <%= coach.lastname %></strong></td>
-                    <td><button class="updatebutton"><a href='/effectif/update/<%= coach.id%>'> Modifier </a></button>
+                    <td class='espacenoms'> <strong> <%= coach.firstname %> <%= coach.lastname %></strong></td>
+                    <td class='espaceboutons'><button class="updatebutton"><a href='/effectif/update/<%= coach.id%>'> Modifier </a></button>
                         <button class="deletebutton"><a onclick="if(confirm('Etes-vous sûr de vouloir supprimer <%= coach.firstname %> <%= coach.lastname %> de la Liste des Coachs ?')) return true; else return false;" href="/effectif/supprimer/<%= coach.id%>">X</a></button> </td>
 
                 </tr>
@@ -115,9 +115,9 @@
             <table> <!-- Table d'affichage des joueuses-->
                 <% listejoueuses.forEach(function(joueuse) { %>
                 <tr>
-                    <td>
+                    <td class='espacenoms'>
                         <strong><%= joueuse.firstname %> <%= joueuse.lastname %></strong></td>
-                    <td> <button class="updatebutton"> <a href='/effectifj/update/<%= joueuse.id%>'> Modifier
+                    <td class="espaceboutons"> <button class="updatebutton"> <a href='/effectifj/update/<%= joueuse.id%>'> Modifier
                             </a></button>
                         <button class="deletebutton">
                             <a onclick="if(confirm('Etes-vous sûr de vouloir supprimer <%= joueuse.firstname %> <%= joueuse.lastname %> de la liste des joueuse ?')) return true; else return false;"

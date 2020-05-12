@@ -10,7 +10,6 @@
 <%- include('header.ejs') %>
 
 <body>
-    <h2>Coach Update : <%= firstname %> <%= lastname %></h2>
     <fieldset>
         <form action="/effectif/update/" method="POST">
             <input type="hidden" value="<%= id %>" name="id">

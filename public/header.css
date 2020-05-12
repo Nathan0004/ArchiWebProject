@@ -3,19 +3,19 @@
 .head {
   background-image: url('./images/marbre.jpg');
   background-size: cover;
-  display: flex;
+  display : flex;
+  justify-content : space-between;
   }
-
 
 h1 {
   color : rgba(58, 49, 49, 0.9);
-  font-size: 80px;
-  margin : auto 185px;
+  font-size: 80px; 
+  margin: auto auto;
 }
 
 .logovs {
-  height : 200px;
-  width : 200px;
+  height : 15%;
+  width : 15%;
 }
 
 /* CSS barre de navigation */
@@ -51,4 +51,19 @@ h1 {
   
  }
 
+ @media (max-width: 1200px) {
+  
 
+  h1 {
+    font-size : 60px;
+  }
+}
+
+ @media (max-width: 800px) {
+    #nav button {padding : 7px 5px;
+    }
+
+    h1 {
+      font-size : 30px;
+    }
+  }
